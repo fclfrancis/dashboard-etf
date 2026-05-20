@@ -177,7 +177,7 @@ st.markdown(HUD_CSS, unsafe_allow_html=True)
 # LOGIN · CONTROLE DE ACESSO POR EMAIL
 # ══════════════════════════════════════════════════════════════════
 
-@st.cache_data(ttl=300)
+@st.cache_data(ttl=60)
 def carregar_emails_autorizados():
     GITHUB_USER   = "fclfrancis"
     GITHUB_REPO   = "dashboard-etf"
@@ -186,8 +186,14 @@ def carregar_emails_autorizados():
     try:
         r = requests.get(url, timeout=10)
         if r.status_code == 200:
-            cfg = yaml.safe_load(r.text)
-            return [e.lower().strip() for e in cfg.get("emails_autorizados", [])]
+            emails = []
+            for linha in r.text.splitlines():
+                linha = linha.strip()
+                if linha.startswith("- "):
+                    email = linha[2:].strip().strip('"').strip("'").lower()
+                    if "@" in email:
+                        emails.append(email)
+            return emails
     except:
         pass
     return []
