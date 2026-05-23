@@ -1466,12 +1466,13 @@ with st.sidebar:
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
 
     pilares_ativos = {}
-    pilares_ativos["EWZ"]  = st.checkbox("EWZ — Brasil proxy direto",  value=True, key="pilar_ewz")
-    pilares_ativos["VALE"] = st.checkbox("VALE — Mineração",            value=True, key="pilar_vale")
-    pilares_ativos["PBR"]  = st.checkbox("PBR — Petróleo Brasil",       value=True, key="pilar_pbr")
-    pilares_ativos["SPY"]  = st.checkbox("SPY — Macro global",          value=True, key="pilar_spy")
-    pilares_ativos["USO"]  = st.checkbox("USO — Petróleo macro",        value=True, key="pilar_uso")
-    pilares_ativos["EEM"]  = st.checkbox("EEM — Macro emergentes",      value=True, key="pilar_eem")
+    # Todos os 6 pilares sempre ativos — sem exposição na UI
+    pilares_ativos["EWZ"]  = True
+    pilares_ativos["VALE"] = True
+    pilares_ativos["PBR"]  = True
+    pilares_ativos["SPY"]  = True
+    pilares_ativos["USO"]  = True
+    pilares_ativos["EEM"]  = True
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     # Valores fixos — não expostos na UI
