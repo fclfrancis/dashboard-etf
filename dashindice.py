@@ -1490,7 +1490,15 @@ _spot_ref    = 0.0
 _v9_ref_df   = pd.DataFrame()
 
 def _get_arqs_github(tk):
-    nomes = tickers_encontrados.get(tk, [])
+    # ── Correção 1: filtra por data do pregão mais recente ──────
+    # Cada arquivo tem a data no nome (ex: ETF_EWZ_2026-05-29_...).
+    # Só carrega arquivos cuja data bate com o snapshot selecionado
+    # (variável `momento`), evitando misturar pregões diferentes.
+    nomes_tk = tickers_encontrados.get(tk, [])
+    nomes = [n for n in nomes_tk if momento and momento in n]
+    if not nomes:
+        # fallback: usa qualquer arquivo disponível do ticker
+        nomes = nomes_tk
     arqs = []
     for nome in nomes:
         js = baixar_json_github_win(nome)
@@ -1549,6 +1557,46 @@ if not m:
     st.markdown(alert_box("⚠ Não foi possível calcular métricas.", "warning"), unsafe_allow_html=True)
     st.stop()
 
+# ── Correção 2: alerta de convicção derivado dos 6 pilares WIN ──
+# Usa net_gex e net_dex de _calcular_metricas_win (já calculado em m)
+# em vez de processar_inteligencia(EWZ). Mantém _v9_ref_df só para
+# o Radar Institucional (whales por z-score em espaço USD do EWZ).
+
+def _alerta_agregado_win(m: dict, ibov: int) -> tuple:
+    """
+    Deriva o alerta de convicção a partir das métricas WIN agregadas.
+    Lógica espelhada de processar_inteligencia, mas usando:
+      - net_gex  (GEX dos 6 pilares, espaço WIN)  como indicador de regime
+      - net_dex  (DEX dos 6 pilares, espaço WIN)  como indicador direcional
+      - gamma_flip WIN                             como divisor de regime
+    Retorna (status, mensagem) para exibição no alerta principal.
+    """
+    net_gex    = m["net_gex"]
+    net_dex    = m["net_dex"]
+    gamma_flip = m["gamma_flip"]
+    gamma_wall = m["gamma_wall"]
+
+    # Regime: Long Gamma (spot acima do flip) vs Short Gamma (abaixo)
+    spot_acima_flip = ibov > gamma_flip
+
+    if spot_acima_flip and net_dex > 0 and net_gex > 0:
+        return "success", "🔥 ALTA CONVICÇÃO (Safe Zone) — Long Gamma + fluxo altista. MMs provêm liquidez para a subida."
+    elif spot_acima_flip and net_dex > 0 and net_gex < 0:
+        return "warning", f"⚡ ATENÇÃO: Fluxo altista mas MM em Short Gamma — volatilidade elevada. Gamma Wall: {fmt_win(gamma_wall)}"
+    elif spot_acima_flip and net_dex <= 0:
+        return "info", f"⚖️ DIVERGÊNCIA: Spot acima do Flip ({fmt_win(gamma_flip)}) mas fluxo vendedor. Aguarde confirmação."
+    elif not spot_acima_flip and net_dex < 0 and net_gex < 0:
+        return "danger", "💀 CASCATA (Falling Knife) — Short Gamma + fluxo baixista. Zona de aceleração negativa."
+    elif not spot_acima_flip and net_dex < 0 and net_gex > 0:
+        return "warning", f"🚀 RISCO DE SQUEEZE! Spot abaixo do Flip ({fmt_win(gamma_flip)}) com fluxo vendedor — reversão possível."
+    elif not spot_acima_flip and net_dex >= 0:
+        return "info", f"🔄 RECUPERAÇÃO TENTATIVA: Fluxo comprador abaixo do Flip ({fmt_win(gamma_flip)}). Confirme rompimento."
+    else:
+        return "info", "⚖️ MERCADO EM EQUILÍBRIO / CONSOLIDAÇÃO — Aguarde confirmação."
+
+_alerta_stat, _alerta_msg = _alerta_agregado_win(m, ibov_val)
+
+# Radar Institucional: mantém EWZ v9 para whales por z-score
 res_intel, g_flip_usd = processar_inteligencia(_v9_ref_df, _spot_ref) if not _v9_ref_df.empty else (None, 0.0)
 
 if res_intel:
@@ -1557,24 +1605,6 @@ if res_intel:
                             vanna_total=("vanna_total","sum"), volume=("volume","sum"),
                             financial_flow=("financial_flow","sum"))
                        .reset_index())
-    net_gex_ref   = _v9_ref_df["gex_total"].sum()
-    net_dex_ref   = _v9_ref_df["dex_total"].sum()
-    net_vanna_ref = _v9_ref_df["vanna_total"].sum()
-    call_vol_ref  = _v9_ref_df[_v9_ref_df["optionType"]=="Call"]["volume"].sum()
-    put_vol_ref   = _v9_ref_df[_v9_ref_df["optionType"]=="Put"]["volume"].sum()
-    mom_val_ref   = call_vol_ref / put_vol_ref if put_vol_ref > 0 else 1.0
-    cnt_bruto_ref = _v9_ref_df["side"].str.startswith("BRUTO").sum()
-    greeks_inv_ref= (~_v9_ref_df["greeks_ok"]).sum()
-    vol_bull_ref  = net_vanna_ref > 0
-    vol_status_ref= "LONG VOL" if vol_bull_ref else "SHORT VOL"
-    vol_color_ref = "#0f0" if vol_bull_ref else "#f44"
-    tag_vol_cls   = "tag-bull" if vol_bull_ref else "tag-bear"
-    shock_act     = "MM COMPRA" if net_vanna_ref > 0 else "MM VENDE"
-    shock_col     = "#0f0" if net_vanna_ref > 0 else "#f44"
-    top_v_ref     = strikes_agg_ref.sort_values("vanna_total", key=abs, ascending=False).head(3)
-    serie_vanna_ref = strikes_agg_ref["vanna_total"]
-    ic_df_ref = strikes_agg_ref[strikes_agg_ref["optionType"]=="Call"].nlargest(2, "dex_total")
-    ip_df_ref = strikes_agg_ref[strikes_agg_ref["optionType"]=="Put"].nsmallest(2, "dex_total")
     w_calls_ref = res_intel["whales"][res_intel["whales"]["optionType"]=="Call"] if not res_intel["whales"].empty else pd.DataFrame()
     w_puts_ref  = res_intel["whales"][res_intel["whales"]["optionType"]=="Put"]  if not res_intel["whales"].empty else pd.DataFrame()
 
@@ -1589,8 +1619,8 @@ col_left, col_right = st.columns([3, 7])
 # ─── COLUNA ESQUERDA (30%) ────────────────────────────────────────
 with col_left:
 
-    if res_intel:
-        st.markdown(alert_box(res_intel["msg"], res_intel["status"]), unsafe_allow_html=True)
+    # ── Correção 3: alerta unificado — fonte: 6 pilares WIN ────────
+    st.markdown(alert_box(_alerta_msg, _alerta_stat), unsafe_allow_html=True)
 
     st.markdown(
         f"<div style='font-family:JetBrains Mono,monospace;font-size:13px;color:#0ff;"
@@ -1802,6 +1832,15 @@ with col_left:
                     f"Net DEX {fmt_M(m['net_dex'])}"), unsafe_allow_html=True)
 
     notas = []
+    # ── Correção 3b: avisa sobre pilares sem dados no snapshot ──
+    _pilares_esperados = set(TICKERS_PILARES)
+    _pilares_carregados = set(pilares_ok)
+    _pilares_faltando = _pilares_esperados - _pilares_carregados
+    if _pilares_faltando:
+        notas.append(("warning",
+            f"⚠ Pilares sem dados no snapshot '{momento}': "
+            f"{', '.join(sorted(_pilares_faltando))} — "
+            f"carregue arquivos com a mesma data para todos os pilares."))
     if m["net_gex"] < 0 and m["net_dex"] < 0:
         notas.append(("danger",  "⚠ PERIGO: MM em Short Gamma com bias baixista → Queda Acelerada"))
     if m["net_gex"] > 0 and m["net_dex"] > 0:
