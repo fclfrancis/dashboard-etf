@@ -577,9 +577,8 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
 
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
@@ -640,9 +639,8 @@ def _calcular_pilar_normalizado(tk: str, arqs: list, ibov: float, peso: float) -
     if not frs: return pd.DataFrame()
     df_p = pd.concat(frs, ignore_index=True)
 
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -725,9 +723,8 @@ def _carregar_pilar_bruto(tk: str, arqs: list, mult: float = 100.0) -> pd.DataFr
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM","EWZ","VALE","PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -1372,10 +1369,7 @@ def _arrays_pine(frames_norm, ibov, pilares_str):
 # ══════════════════════════════════════════════════════════════════
 
 with st.sidebar:
-    st.markdown("<div style='font-family:Inter,sans-serif;font-size:14px;font-weight:700;"
-                "color:#0ff;letter-spacing:2px;padding:10px 0 16px;text-shadow:0 0 6px #0ff;'>⚙ SETUP OPERACIONAL</div>",
-                unsafe_allow_html=True)
-
+    # ── Configurações GitHub (ocultas — sem exibição na sidebar) ──
     GITHUB_USER   = "fclfrancis"
     GITHUB_REPO   = "dashboard-etf"
     GITHUB_BRANCH = "main"
@@ -1410,25 +1404,26 @@ with st.sidebar:
 
     if nomes_disponiveis:
         tickers_encontrados = agrupar_por_ticker(nomes_disponiveis)
-        tks_ok = list(tickers_encontrados.keys())
-        st.info(f"✅ {len(nomes_disponiveis)} arquivos | Pilares: {', '.join(tks_ok) if tks_ok else '—'}")
-        with st.expander("📄 Ver arquivos"):
-            st.write(nomes_disponiveis)
-    else:
-        st.warning("⚠ Nenhum arquivo encontrado na pasta 'dados/' do repositório.")
 
-    st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-
+    # Snapshot: seletor oculto via CSS — funcional mas invisível
     snapshots = {}
     if nomes_disponiveis: snapshots = agrupar_snapshots(nomes_disponiveis)
-    if snapshots: momento = st.selectbox("📅 Snapshot (data):", list(snapshots.keys()))
-    else: momento = None; st.info("Aguardando arquivos no GitHub...")
 
-    st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-    st.markdown("<div style='color:#ffb400;font-size:13px;font-weight:700;letter-spacing:2px;"
-                "padding:6px 0;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
+    # CSS para ocultar tudo acima de PARÂMETROS WIN na sidebar
+    st.markdown("""
+    <style>
+    /* Oculta o seletor de snapshot mas mantém funcional via key */
+    div[data-testid='stSidebar'] div[data-testid='stSelectbox'] { display: none !important; }
+    </style>""", unsafe_allow_html=True)
 
-    ibov_input    = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
+    if snapshots: momento = st.selectbox("Snapshot:", list(snapshots.keys()), key="snapshot_hidden", label_visibility="collapsed")
+    else: momento = None
+
+    # ── Único elemento visível: PARÂMETROS WIN ────────────────────
+    st.markdown("<div style='color:#ffb400;font-size:14px;font-weight:700;letter-spacing:2px;"
+                "padding:16px 0 8px;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
+
+    ibov_input = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
 
@@ -1453,8 +1448,8 @@ ibov_val = int(ibov_input)
 
 st.markdown(
     f"<div style='display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;'>"
-    f"<h3 style='margin:0;'>📡 PAINEL WIN AGREGADO • MARKET MAKER — 6 PILARES</h3>"
-    f"<span style='color:#8a9bb5;font-size:13px;'>⏱️ {datetime.now().strftime('%H:%M:%S')} | V9.6-WIN-v4.1</span>"
+    f"<h3 style='margin:0;'>📡 PAINEL WIN AGREGADO • MARKET MAKER</h3>"
+    f"<span style='color:#8a9bb5;font-size:13px;'>⏱️ {datetime.now().strftime('%H:%M:%S')} | V9.6-WIN-v4.2</span>"
     f"</div>", unsafe_allow_html=True)
 
 _pilares_str = " · ".join([tk for tk, ativo in pilares_ativos.items() if ativo])
@@ -1625,8 +1620,7 @@ with col_left:
     st.markdown(
         f"<div style='font-family:JetBrains Mono,monospace;font-size:13px;color:#0ff;"
         f"margin:12px 0 2px;letter-spacing:1px;text-shadow:0 0 5px #0ff;'>"
-        f"⚡ SPOT WIN: <b style='color:#ffb400;font-size:15px;'>{fmt_win(ibov_val)}</b>"
-        f"<span style='color:#8a9bb5;font-size:13px;margin-left:8px;'>(pilares: {pilares_str})</span></div>",
+        f"⚡ SPOT WIN: <b style='color:#ffb400;font-size:15px;'>{fmt_win(ibov_val)}</b></div>",
         unsafe_allow_html=True)
 
     k1, k2 = st.columns(2)
@@ -1852,12 +1846,12 @@ with col_left:
 
 # ─── COLUNA DIREITA (70%) ────────────────────────────────────────
 with col_right:
-    section("TERMINAL WIN — VOLUME · OPEN INTEREST  (6 PILARES AGREGADOS)")
+    section("TERMINAL WIN — VOLUME · OPEN INTEREST")
     fig_vol = build_vol_oi_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_vol, use_container_width=True)
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-    section("TRIPLE PRESSURE MAP WIN  —  DEX · GEX · VANNA  (6 PILARES AGREGADOS)")
+    section("TRIPLE PRESSURE MAP WIN  —  DEX · GEX · VANNA")
     fig_press = build_pressure_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_press, use_container_width=True)
 
