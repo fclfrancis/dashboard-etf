@@ -32,7 +32,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|110.00C",
@@ -63,7 +63,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -76,10 +76,10 @@
                 "bidPrice": "25.65",
                 "midpoint": "26.78",
                 "askPrice": "27.90",
-                "lastPrice": "26.41",
-                "priceChange": "-3.84",
-                "percentChange": "-12.69%",
-                "volume": "30",
+                "lastPrice": "26.44",
+                "priceChange": "-3.81",
+                "percentChange": "-12.60%",
+                "volume": "61",
                 "openInterest": "3",
                 "openInterestChange": "+3",
                 "volatility": "0.00%",
@@ -89,14 +89,14 @@
                 "theta": "0.0000",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:59 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|111.00C",
@@ -107,10 +107,10 @@
                     "bidPrice": 25.65,
                     "midpoint": 26.78,
                     "askPrice": 27.9,
-                    "lastPrice": 26.41,
-                    "priceChange": -3.84,
-                    "percentChange": -0.12694214876033,
-                    "volume": 30,
+                    "lastPrice": 26.44,
+                    "priceChange": -3.81,
+                    "percentChange": -0.12595041322314,
+                    "volume": 61,
                     "openInterest": 3,
                     "openInterestChange": 3,
                     "volatility": 0,
@@ -120,14 +120,14 @@
                     "theta": 0,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811176,
+                    "tradeTime": 1779811287,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -140,10 +140,10 @@
                 "bidPrice": "24.80",
                 "midpoint": "25.88",
                 "askPrice": "26.95",
-                "lastPrice": "25.49",
-                "priceChange": "-3.72",
-                "percentChange": "-12.74%",
-                "volume": "17",
+                "lastPrice": "25.46",
+                "priceChange": "-3.75",
+                "percentChange": "-12.84%",
+                "volume": "50",
                 "openInterest": "2",
                 "openInterestChange": "+2",
                 "volatility": "165.55%",
@@ -153,14 +153,14 @@
                 "theta": "-0.1327",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:59 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|112.00C",
@@ -171,10 +171,10 @@
                     "bidPrice": 24.8,
                     "midpoint": 25.88,
                     "askPrice": 26.95,
-                    "lastPrice": 25.49,
-                    "priceChange": -3.72,
-                    "percentChange": -0.12735364601164,
-                    "volume": 17,
+                    "lastPrice": 25.46,
+                    "priceChange": -3.75,
+                    "percentChange": -0.12838069154399,
+                    "volume": 50,
                     "openInterest": 2,
                     "openInterestChange": 2,
                     "volatility": 1.6555,
@@ -184,14 +184,14 @@
                     "theta": -0.132687,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811176,
+                    "tradeTime": 1779811287,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -204,10 +204,10 @@
                 "bidPrice": "23.80",
                 "midpoint": "24.80",
                 "askPrice": "25.80",
-                "lastPrice": "24.82",
-                "priceChange": "-3.42",
-                "percentChange": "-12.11%",
-                "volume": "3",
+                "lastPrice": "24.47",
+                "priceChange": "-3.77",
+                "percentChange": "-13.35%",
+                "volume": "5",
                 "openInterest": "2",
                 "openInterestChange": "+2",
                 "volatility": "0.00%",
@@ -217,14 +217,14 @@
                 "theta": "0.0000",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:39 ET",
+                "tradeTime": "12:00 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|113.00C",
@@ -235,10 +235,10 @@
                     "bidPrice": 23.8,
                     "midpoint": 24.8,
                     "askPrice": 25.8,
-                    "lastPrice": 24.82,
-                    "priceChange": -3.42,
-                    "percentChange": -0.12110481586402,
-                    "volume": 3,
+                    "lastPrice": 24.47,
+                    "priceChange": -3.77,
+                    "percentChange": -0.13349858356941,
+                    "volume": 5,
                     "openInterest": 2,
                     "openInterestChange": 2,
                     "volatility": 0,
@@ -248,14 +248,14 @@
                     "theta": 0,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779809965,
+                    "tradeTime": 1779811243,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -288,7 +288,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|114.00C",
@@ -319,7 +319,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -352,7 +352,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|115.00C",
@@ -383,7 +383,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -416,7 +416,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|116.00C",
@@ -447,7 +447,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -460,10 +460,10 @@
                 "bidPrice": "19.70",
                 "midpoint": "20.92",
                 "askPrice": "22.15",
-                "lastPrice": "20.69",
-                "priceChange": "-5.43",
-                "percentChange": "-20.79%",
-                "volume": "57",
+                "lastPrice": "20.13",
+                "priceChange": "-5.99",
+                "percentChange": "-22.93%",
+                "volume": "59",
                 "openInterest": "1",
                 "openInterestChange": "unch",
                 "volatility": "153.96%",
@@ -473,14 +473,14 @@
                 "theta": "-0.2688",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:18 ET",
+                "tradeTime": "12:04 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|117.00C",
@@ -491,10 +491,10 @@
                     "bidPrice": 19.7,
                     "midpoint": 20.92,
                     "askPrice": 22.15,
-                    "lastPrice": 20.69,
-                    "priceChange": -5.43,
-                    "percentChange": -0.20788667687596,
-                    "volume": 57,
+                    "lastPrice": 20.13,
+                    "priceChange": -5.99,
+                    "percentChange": -0.22932618683002,
+                    "volume": 59,
                     "openInterest": 1,
                     "openInterestChange": 0,
                     "volatility": 1.5396,
@@ -504,14 +504,14 @@
                     "theta": -0.26881,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779808736,
+                    "tradeTime": 1779811444,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -524,10 +524,10 @@
                 "bidPrice": "18.50",
                 "midpoint": "19.78",
                 "askPrice": "21.05",
-                "lastPrice": "19.93",
-                "priceChange": "unch",
-                "percentChange": "unch",
-                "volume": "1",
+                "lastPrice": "19.15",
+                "priceChange": "-0.78",
+                "percentChange": "-3.91%",
+                "volume": "3",
                 "openInterest": "0",
                 "openInterestChange": "unch",
                 "volatility": "0.00%",
@@ -537,14 +537,14 @@
                 "theta": "0.0000",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:54 ET",
+                "tradeTime": "12:04 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|118.00C",
@@ -555,10 +555,10 @@
                     "bidPrice": 18.5,
                     "midpoint": 19.78,
                     "askPrice": 21.05,
-                    "lastPrice": 19.93,
-                    "priceChange": 0,
-                    "percentChange": 0,
-                    "volume": 1,
+                    "lastPrice": 19.15,
+                    "priceChange": -0.78,
+                    "percentChange": -0.039136979427998,
+                    "volume": 3,
                     "openInterest": 0,
                     "openInterestChange": 0,
                     "volatility": 0,
@@ -568,14 +568,14 @@
                     "theta": 0,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810872,
+                    "tradeTime": 1779811444,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -608,7 +608,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|119.00C",
@@ -639,7 +639,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -672,7 +672,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|120.00C",
@@ -703,7 +703,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -736,7 +736,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|121.00C",
@@ -767,7 +767,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -800,7 +800,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|122.00C",
@@ -831,7 +831,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -864,7 +864,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|123.00C",
@@ -895,7 +895,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -928,7 +928,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|124.00C",
@@ -959,7 +959,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -992,7 +992,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|125.00C",
@@ -1023,7 +1023,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1056,7 +1056,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|126.00C",
@@ -1087,7 +1087,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1100,10 +1100,10 @@
                 "bidPrice": "9.80",
                 "midpoint": "10.85",
                 "askPrice": "11.90",
-                "lastPrice": "10.47",
-                "priceChange": "-6.83",
-                "percentChange": "-39.48%",
-                "volume": "6",
+                "lastPrice": "10.68",
+                "priceChange": "-6.62",
+                "percentChange": "-38.27%",
+                "volume": "9",
                 "openInterest": "31",
                 "openInterestChange": "unch",
                 "volatility": "56.30%",
@@ -1113,14 +1113,14 @@
                 "theta": "-0.0289",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:55 ET",
+                "tradeTime": "12:00 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|127.00C",
@@ -1131,10 +1131,10 @@
                     "bidPrice": 9.8,
                     "midpoint": 10.85,
                     "askPrice": 11.9,
-                    "lastPrice": 10.47,
-                    "priceChange": -6.83,
-                    "percentChange": -0.39479768786127,
-                    "volume": 6,
+                    "lastPrice": 10.68,
+                    "priceChange": -6.62,
+                    "percentChange": -0.38265895953757,
+                    "volume": 9,
                     "openInterest": 31,
                     "openInterestChange": 0,
                     "volatility": 0.563,
@@ -1144,14 +1144,14 @@
                     "theta": -0.028883,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810941,
+                    "tradeTime": 1779811231,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1167,7 +1167,7 @@
                 "lastPrice": "9.76",
                 "priceChange": "-4.60",
                 "percentChange": "-32.03%",
-                "volume": "4",
+                "volume": "8",
                 "openInterest": "20",
                 "openInterestChange": "+4",
                 "volatility": "119.32%",
@@ -1177,14 +1177,14 @@
                 "theta": "-0.8289",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:58 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|128.00C",
@@ -1198,7 +1198,7 @@
                     "lastPrice": 9.76,
                     "priceChange": -4.6,
                     "percentChange": -0.32033426183844,
-                    "volume": 4,
+                    "volume": 8,
                     "openInterest": 20,
                     "openInterestChange": 4,
                     "volatility": 1.1932,
@@ -1208,14 +1208,14 @@
                     "theta": -0.828928,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811087,
+                    "tradeTime": 1779811262,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1231,7 +1231,7 @@
                 "lastPrice": "8.84",
                 "priceChange": "-5.06",
                 "percentChange": "-36.40%",
-                "volume": "143",
+                "volume": "144",
                 "openInterest": "28",
                 "openInterestChange": "+2",
                 "volatility": "116.93%",
@@ -1241,14 +1241,14 @@
                 "theta": "-0.9152",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:58 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|129.00C",
@@ -1262,7 +1262,7 @@
                     "lastPrice": 8.84,
                     "priceChange": -5.06,
                     "percentChange": -0.36402877697842,
-                    "volume": 143,
+                    "volume": 144,
                     "openInterest": 28,
                     "openInterestChange": 2,
                     "volatility": 1.1693,
@@ -1272,14 +1272,14 @@
                     "theta": -0.915195,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811087,
+                    "tradeTime": 1779811262,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1312,7 +1312,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|130.00C",
@@ -1343,7 +1343,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1376,7 +1376,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|131.00C",
@@ -1407,7 +1407,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1420,10 +1420,10 @@
                 "bidPrice": "5.25",
                 "midpoint": "6.28",
                 "askPrice": "7.30",
-                "lastPrice": "6.57",
-                "priceChange": "-4.61",
-                "percentChange": "-41.23%",
-                "volume": "54",
+                "lastPrice": "6.55",
+                "priceChange": "-4.63",
+                "percentChange": "-41.41%",
+                "volume": "55",
                 "openInterest": "86",
                 "openInterestChange": "+6",
                 "volatility": "79.26%",
@@ -1433,14 +1433,14 @@
                 "theta": "-0.6576",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "10:01 ET",
+                "tradeTime": "12:05 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|132.00C",
@@ -1451,10 +1451,10 @@
                     "bidPrice": 5.25,
                     "midpoint": 6.28,
                     "askPrice": 7.3,
-                    "lastPrice": 6.57,
-                    "priceChange": -4.61,
-                    "percentChange": -0.41234347048301,
-                    "volume": 54,
+                    "lastPrice": 6.55,
+                    "priceChange": -4.63,
+                    "percentChange": -0.41413237924866,
+                    "volume": 55,
                     "openInterest": 86,
                     "openInterestChange": 6,
                     "volatility": 0.7926,
@@ -1464,14 +1464,14 @@
                     "theta": -0.657554,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779804097,
+                    "tradeTime": 1779811522,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1504,7 +1504,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|133.00C",
@@ -1535,7 +1535,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1568,7 +1568,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|134.00C",
@@ -1599,7 +1599,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1632,7 +1632,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|135.00C",
@@ -1663,7 +1663,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1696,7 +1696,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|136.00C",
@@ -1727,7 +1727,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1740,10 +1740,10 @@
                 "bidPrice": "2.19",
                 "midpoint": "2.75",
                 "askPrice": "3.30",
-                "lastPrice": "2.55",
-                "priceChange": "-5.35",
-                "percentChange": "-67.72%",
-                "volume": "464",
+                "lastPrice": "2.48",
+                "priceChange": "-5.42",
+                "percentChange": "-68.61%",
+                "volume": "479",
                 "openInterest": "93",
                 "openInterestChange": "+25",
                 "volatility": "80.04%",
@@ -1753,14 +1753,14 @@
                 "theta": "-1.1431",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:56 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|137.00C",
@@ -1771,10 +1771,10 @@
                     "bidPrice": 2.19,
                     "midpoint": 2.75,
                     "askPrice": 3.3,
-                    "lastPrice": 2.55,
-                    "priceChange": -5.35,
-                    "percentChange": -0.67721518987342,
-                    "volume": 464,
+                    "lastPrice": 2.48,
+                    "priceChange": -5.42,
+                    "percentChange": -0.68607594936709,
+                    "volume": 479,
                     "openInterest": 93,
                     "openInterestChange": 25,
                     "volatility": 0.8004,
@@ -1784,14 +1784,14 @@
                     "theta": -1.143051,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810993,
+                    "tradeTime": 1779811309,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1804,10 +1804,10 @@
                 "bidPrice": "2.00",
                 "midpoint": "2.30",
                 "askPrice": "2.59",
-                "lastPrice": "1.95",
-                "priceChange": "-5.57",
-                "percentChange": "-74.07%",
-                "volume": "372",
+                "lastPrice": "2.00",
+                "priceChange": "-5.52",
+                "percentChange": "-73.40%",
+                "volume": "387",
                 "openInterest": "124",
                 "openInterestChange": "+113",
                 "volatility": "82.32%",
@@ -1817,14 +1817,14 @@
                 "theta": "-1.1912",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:59 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|138.00C",
@@ -1835,10 +1835,10 @@
                     "bidPrice": 2,
                     "midpoint": 2.3,
                     "askPrice": 2.59,
-                    "lastPrice": 1.95,
-                    "priceChange": -5.57,
-                    "percentChange": -0.7406914893617,
-                    "volume": 372,
+                    "lastPrice": 2,
+                    "priceChange": -5.52,
+                    "percentChange": -0.73404255319149,
+                    "volume": 387,
                     "openInterest": 124,
                     "openInterestChange": 113,
                     "volatility": 0.8232,
@@ -1848,14 +1848,14 @@
                     "theta": -1.191164,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811151,
+                    "tradeTime": 1779811309,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1868,10 +1868,10 @@
                 "bidPrice": "1.45",
                 "midpoint": "1.76",
                 "askPrice": "2.07",
-                "lastPrice": "1.60",
-                "priceChange": "-5.09",
-                "percentChange": "-76.08%",
-                "volume": "81",
+                "lastPrice": "1.51",
+                "priceChange": "-5.18",
+                "percentChange": "-77.43%",
+                "volume": "100",
                 "openInterest": "301",
                 "openInterestChange": "+14",
                 "volatility": "79.24%",
@@ -1881,14 +1881,14 @@
                 "theta": "-1.1277",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:54 ET",
+                "tradeTime": "12:05 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|139.00C",
@@ -1899,10 +1899,10 @@
                     "bidPrice": 1.45,
                     "midpoint": 1.76,
                     "askPrice": 2.07,
-                    "lastPrice": 1.6,
-                    "priceChange": -5.09,
-                    "percentChange": -0.76083707025411,
-                    "volume": 81,
+                    "lastPrice": 1.51,
+                    "priceChange": -5.18,
+                    "percentChange": -0.77428998505232,
+                    "volume": 100,
                     "openInterest": 301,
                     "openInterestChange": 14,
                     "volatility": 0.7924,
@@ -1912,14 +1912,14 @@
                     "theta": -1.127722,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810886,
+                    "tradeTime": 1779811511,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1932,10 +1932,10 @@
                 "bidPrice": "1.07",
                 "midpoint": "1.27",
                 "askPrice": "1.46",
-                "lastPrice": "1.15",
-                "priceChange": "-4.84",
-                "percentChange": "-80.80%",
-                "volume": "1,784",
+                "lastPrice": "1.25",
+                "priceChange": "-4.74",
+                "percentChange": "-79.13%",
+                "volume": "1,793",
                 "openInterest": "362",
                 "openInterestChange": "+116",
                 "volatility": "74.94%",
@@ -1945,14 +1945,14 @@
                 "theta": "-1.0098",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:58 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|140.00C",
@@ -1963,10 +1963,10 @@
                     "bidPrice": 1.07,
                     "midpoint": 1.27,
                     "askPrice": 1.46,
-                    "lastPrice": 1.15,
-                    "priceChange": -4.84,
-                    "percentChange": -0.80801335559265,
-                    "volume": 1784,
+                    "lastPrice": 1.25,
+                    "priceChange": -4.74,
+                    "percentChange": -0.79131886477462,
+                    "volume": 1793,
                     "openInterest": 362,
                     "openInterestChange": 116,
                     "volatility": 0.7494,
@@ -1976,14 +1976,14 @@
                     "theta": -1.009819,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811124,
+                    "tradeTime": 1779811403,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -1996,10 +1996,10 @@
                 "bidPrice": "0.79",
                 "midpoint": "1.15",
                 "askPrice": "1.50",
-                "lastPrice": "0.97",
-                "priceChange": "-4.51",
-                "percentChange": "-82.30%",
-                "volume": "746",
+                "lastPrice": "1.10",
+                "priceChange": "-4.38",
+                "percentChange": "-79.93%",
+                "volume": "768",
                 "openInterest": "416",
                 "openInterestChange": "+72",
                 "volatility": "82.41%",
@@ -2009,14 +2009,14 @@
                 "theta": "-1.0493",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:54 ET",
+                "tradeTime": "12:04 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|141.00C",
@@ -2027,10 +2027,10 @@
                     "bidPrice": 0.79,
                     "midpoint": 1.15,
                     "askPrice": 1.5,
-                    "lastPrice": 0.97,
-                    "priceChange": -4.51,
-                    "percentChange": -0.82299270072993,
-                    "volume": 746,
+                    "lastPrice": 1.1,
+                    "priceChange": -4.38,
+                    "percentChange": -0.7992700729927,
+                    "volume": 768,
                     "openInterest": 416,
                     "openInterestChange": 72,
                     "volatility": 0.8241,
@@ -2040,14 +2040,14 @@
                     "theta": -1.049284,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810858,
+                    "tradeTime": 1779811476,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2060,10 +2060,10 @@
                 "bidPrice": "0.55",
                 "midpoint": "0.78",
                 "askPrice": "1.00",
-                "lastPrice": "0.66",
-                "priceChange": "-4.28",
-                "percentChange": "-86.64%",
-                "volume": "450",
+                "lastPrice": "0.68",
+                "priceChange": "-4.26",
+                "percentChange": "-86.23%",
+                "volume": "471",
                 "openInterest": "364",
                 "openInterestChange": "+35",
                 "volatility": "77.80%",
@@ -2073,14 +2073,14 @@
                 "theta": "-0.8743",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:54 ET",
+                "tradeTime": "12:02 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|142.00C",
@@ -2091,10 +2091,10 @@
                     "bidPrice": 0.55,
                     "midpoint": 0.78,
                     "askPrice": 1,
-                    "lastPrice": 0.66,
-                    "priceChange": -4.28,
-                    "percentChange": -0.8663967611336,
-                    "volume": 450,
+                    "lastPrice": 0.68,
+                    "priceChange": -4.26,
+                    "percentChange": -0.86234817813765,
+                    "volume": 471,
                     "openInterest": 364,
                     "openInterestChange": 35,
                     "volatility": 0.778,
@@ -2104,14 +2104,14 @@
                     "theta": -0.874335,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810858,
+                    "tradeTime": 1779811326,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2124,10 +2124,10 @@
                 "bidPrice": "0.55",
                 "midpoint": "0.68",
                 "askPrice": "0.80",
-                "lastPrice": "0.55",
-                "priceChange": "-4.15",
-                "percentChange": "-88.30%",
-                "volume": "163",
+                "lastPrice": "0.51",
+                "priceChange": "-4.19",
+                "percentChange": "-89.15%",
+                "volume": "164",
                 "openInterest": "517",
                 "openInterestChange": "+153",
                 "volatility": "82.90%",
@@ -2137,14 +2137,14 @@
                 "theta": "-0.8522",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:56 ET",
+                "tradeTime": "11:59 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|143.00C",
@@ -2155,10 +2155,10 @@
                     "bidPrice": 0.55,
                     "midpoint": 0.68,
                     "askPrice": 0.8,
-                    "lastPrice": 0.55,
-                    "priceChange": -4.15,
-                    "percentChange": -0.88297872340426,
-                    "volume": 163,
+                    "lastPrice": 0.51,
+                    "priceChange": -4.19,
+                    "percentChange": -0.89148936170213,
+                    "volume": 164,
                     "openInterest": 517,
                     "openInterestChange": 153,
                     "volatility": 0.829,
@@ -2168,14 +2168,14 @@
                     "theta": -0.852224,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810999,
+                    "tradeTime": 1779811187,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2188,10 +2188,10 @@
                 "bidPrice": "0.31",
                 "midpoint": "0.47",
                 "askPrice": "0.63",
-                "lastPrice": "0.39",
-                "priceChange": "-4.71",
-                "percentChange": "-92.35%",
-                "volume": "106",
+                "lastPrice": "0.37",
+                "priceChange": "-4.73",
+                "percentChange": "-92.75%",
+                "volume": "107",
                 "openInterest": "146",
                 "openInterestChange": "-28",
                 "volatility": "81.00%",
@@ -2201,14 +2201,14 @@
                 "theta": "-0.7030",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:46 ET",
+                "tradeTime": "12:06 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|144.00C",
@@ -2219,10 +2219,10 @@
                     "bidPrice": 0.31,
                     "midpoint": 0.47,
                     "askPrice": 0.63,
-                    "lastPrice": 0.39,
-                    "priceChange": -4.71,
-                    "percentChange": -0.92352941176471,
-                    "volume": 106,
+                    "lastPrice": 0.37,
+                    "priceChange": -4.73,
+                    "percentChange": -0.92745098039216,
+                    "volume": 107,
                     "openInterest": 146,
                     "openInterestChange": -28,
                     "volatility": 0.81,
@@ -2232,14 +2232,14 @@
                     "theta": -0.702995,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810391,
+                    "tradeTime": 1779811580,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2272,7 +2272,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|145.00C",
@@ -2303,7 +2303,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2316,10 +2316,10 @@
                 "bidPrice": "0.23",
                 "midpoint": "0.27",
                 "askPrice": "0.31",
-                "lastPrice": "0.32",
-                "priceChange": "-3.31",
-                "percentChange": "-91.18%",
-                "volume": "298",
+                "lastPrice": "0.24",
+                "priceChange": "-3.39",
+                "percentChange": "-93.39%",
+                "volume": "299",
                 "openInterest": "364",
                 "openInterestChange": "+51",
                 "volatility": "83.21%",
@@ -2329,14 +2329,14 @@
                 "theta": "-0.5174",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:39 ET",
+                "tradeTime": "12:02 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|146.00C",
@@ -2347,10 +2347,10 @@
                     "bidPrice": 0.23,
                     "midpoint": 0.27,
                     "askPrice": 0.31,
-                    "lastPrice": 0.32,
-                    "priceChange": -3.31,
-                    "percentChange": -0.91184573002755,
-                    "volume": 298,
+                    "lastPrice": 0.24,
+                    "priceChange": -3.39,
+                    "percentChange": -0.93388429752066,
+                    "volume": 299,
                     "openInterest": 364,
                     "openInterestChange": 51,
                     "volatility": 0.8321,
@@ -2360,14 +2360,14 @@
                     "theta": -0.517371,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779809964,
+                    "tradeTime": 1779811356,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2400,7 +2400,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|147.00C",
@@ -2431,7 +2431,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2464,7 +2464,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|148.00C",
@@ -2495,7 +2495,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2528,7 +2528,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|149.00C",
@@ -2559,7 +2559,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2572,10 +2572,10 @@
                 "bidPrice": "0.10",
                 "midpoint": "0.11",
                 "askPrice": "0.12",
-                "lastPrice": "0.06",
-                "priceChange": "-2.39",
-                "percentChange": "-97.55%",
-                "volume": "1,413",
+                "lastPrice": "0.10",
+                "priceChange": "-2.35",
+                "percentChange": "-95.92%",
+                "volume": "1,457",
                 "openInterest": "2,308",
                 "openInterestChange": "+1,589",
                 "volatility": "91.87%",
@@ -2585,14 +2585,14 @@
                 "theta": "-0.2952",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:58 ET",
+                "tradeTime": "12:06 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|150.00C",
@@ -2603,10 +2603,10 @@
                     "bidPrice": 0.1,
                     "midpoint": 0.11,
                     "askPrice": 0.12,
-                    "lastPrice": 0.06,
-                    "priceChange": -2.39,
-                    "percentChange": -0.97551020408163,
-                    "volume": 1413,
+                    "lastPrice": 0.1,
+                    "priceChange": -2.35,
+                    "percentChange": -0.95918367346939,
+                    "volume": 1457,
                     "openInterest": 2308,
                     "openInterestChange": 1589,
                     "volatility": 0.9187,
@@ -2616,14 +2616,14 @@
                     "theta": -0.295229,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811124,
+                    "tradeTime": 1779811573,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2656,7 +2656,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|151.00C",
@@ -2687,7 +2687,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2720,7 +2720,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|152.00C",
@@ -2751,7 +2751,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2784,7 +2784,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|153.00C",
@@ -2815,7 +2815,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2848,7 +2848,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|154.00C",
@@ -2879,7 +2879,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2895,7 +2895,7 @@
                 "lastPrice": "0.04",
                 "priceChange": "-1.49",
                 "percentChange": "-97.39%",
-                "volume": "547",
+                "volume": "577",
                 "openInterest": "3,306",
                 "openInterestChange": "+678",
                 "volatility": "105.83%",
@@ -2905,14 +2905,14 @@
                 "theta": "-0.1720",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:56 ET",
+                "tradeTime": "12:06 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|155.00C",
@@ -2926,7 +2926,7 @@
                     "lastPrice": 0.04,
                     "priceChange": -1.49,
                     "percentChange": -0.97385620915033,
-                    "volume": 547,
+                    "volume": 577,
                     "openInterest": 3306,
                     "openInterestChange": 678,
                     "volatility": 1.0583,
@@ -2936,14 +2936,14 @@
                     "theta": -0.172017,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810994,
+                    "tradeTime": 1779811580,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -2976,7 +2976,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|156.00C",
@@ -3007,7 +3007,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3040,7 +3040,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|157.00C",
@@ -3071,7 +3071,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3104,7 +3104,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|158.00C",
@@ -3135,7 +3135,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3168,7 +3168,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|159.00C",
@@ -3199,7 +3199,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3232,7 +3232,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|160.00C",
@@ -3263,7 +3263,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3279,7 +3279,7 @@
                 "lastPrice": "0.02",
                 "priceChange": "-0.76",
                 "percentChange": "-97.44%",
-                "volume": "16",
+                "volume": "17",
                 "openInterest": "236",
                 "openInterestChange": "+71",
                 "volatility": "122.85%",
@@ -3289,14 +3289,14 @@
                 "theta": "-0.1038",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "10:26 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|161.00C",
@@ -3310,7 +3310,7 @@
                     "lastPrice": 0.02,
                     "priceChange": -0.76,
                     "percentChange": -0.97435897435897,
-                    "volume": 16,
+                    "volume": 17,
                     "openInterest": 236,
                     "openInterestChange": 71,
                     "volatility": 1.2285,
@@ -3320,14 +3320,14 @@
                     "theta": -0.103796,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779805615,
+                    "tradeTime": 1779811280,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3360,7 +3360,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|162.00C",
@@ -3391,7 +3391,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3424,7 +3424,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|163.00C",
@@ -3455,7 +3455,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3488,7 +3488,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|164.00C",
@@ -3519,7 +3519,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3552,7 +3552,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|165.00C",
@@ -3583,7 +3583,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3616,7 +3616,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|166.00C",
@@ -3647,7 +3647,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3680,7 +3680,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|167.00C",
@@ -3711,7 +3711,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3744,7 +3744,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|168.00C",
@@ -3775,7 +3775,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3808,7 +3808,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|169.00C",
@@ -3839,7 +3839,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3872,7 +3872,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|170.00C",
@@ -3903,7 +3903,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -3919,7 +3919,7 @@
                 "lastPrice": "0.02",
                 "priceChange": "-0.27",
                 "percentChange": "-93.10%",
-                "volume": "95",
+                "volume": "100",
                 "openInterest": "75",
                 "openInterestChange": "+39",
                 "volatility": "159.54%",
@@ -3929,14 +3929,14 @@
                 "theta": "-0.0917",
                 "optionType": "Call",
                 "daysToExpiration": "1",
-                "tradeTime": "11:42 ET",
+                "tradeTime": "12:02 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|171.00C",
@@ -3950,7 +3950,7 @@
                     "lastPrice": 0.02,
                     "priceChange": -0.27,
                     "percentChange": -0.93103448275862,
-                    "volume": 95,
+                    "volume": 100,
                     "openInterest": 75,
                     "openInterestChange": 39,
                     "volatility": 1.5954,
@@ -3960,14 +3960,14 @@
                     "theta": -0.091684,
                     "optionType": "Call",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810177,
+                    "tradeTime": 1779811357,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4000,7 +4000,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|172.00C",
@@ -4031,7 +4031,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4064,7 +4064,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|173.00C",
@@ -4095,7 +4095,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4128,7 +4128,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|174.00C",
@@ -4159,7 +4159,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4192,7 +4192,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|175.00C",
@@ -4223,7 +4223,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4256,7 +4256,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|176.00C",
@@ -4287,7 +4287,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4320,7 +4320,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|177.00C",
@@ -4351,7 +4351,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4384,7 +4384,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|177.50C",
@@ -4415,7 +4415,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4448,7 +4448,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|178.00C",
@@ -4479,7 +4479,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4512,7 +4512,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|179.00C",
@@ -4543,7 +4543,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4576,7 +4576,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|180.00C",
@@ -4607,7 +4607,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4640,7 +4640,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|181.00C",
@@ -4671,7 +4671,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4704,7 +4704,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|182.00C",
@@ -4735,7 +4735,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4768,7 +4768,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|182.50C",
@@ -4799,7 +4799,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4832,7 +4832,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|183.00C",
@@ -4863,7 +4863,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4896,7 +4896,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|184.00C",
@@ -4927,7 +4927,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -4960,7 +4960,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|185.00C",
@@ -4991,7 +4991,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5024,7 +5024,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|186.00C",
@@ -5055,7 +5055,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5088,7 +5088,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|187.00C",
@@ -5119,7 +5119,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5152,7 +5152,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|187.50C",
@@ -5183,7 +5183,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5216,7 +5216,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|188.00C",
@@ -5247,7 +5247,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5280,7 +5280,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|189.00C",
@@ -5311,7 +5311,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5344,7 +5344,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|190.00C",
@@ -5375,7 +5375,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             },
@@ -5408,7 +5408,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Call",
                 "raw": {
                     "symbol": "USO|20260527|191.00C",
@@ -5439,7 +5439,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Call"
                 }
             }
@@ -5474,7 +5474,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|110.00P",
@@ -5505,7 +5505,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5538,7 +5538,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|111.00P",
@@ -5569,7 +5569,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5602,7 +5602,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|112.00P",
@@ -5633,7 +5633,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5666,7 +5666,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|113.00P",
@@ -5697,7 +5697,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5730,7 +5730,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|114.00P",
@@ -5761,7 +5761,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5794,7 +5794,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|115.00P",
@@ -5825,7 +5825,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5858,7 +5858,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|116.00P",
@@ -5889,7 +5889,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5922,7 +5922,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|117.00P",
@@ -5953,7 +5953,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -5986,7 +5986,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|118.00P",
@@ -6017,7 +6017,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6050,7 +6050,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|119.00P",
@@ -6081,7 +6081,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6097,7 +6097,7 @@
                 "lastPrice": "0.01",
                 "priceChange": "-0.32",
                 "percentChange": "-96.97%",
-                "volume": "896",
+                "volume": "897",
                 "openInterest": "1,738",
                 "openInterestChange": "+797",
                 "volatility": "106.51%",
@@ -6107,14 +6107,14 @@
                 "theta": "-0.0649",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:44 ET",
+                "tradeTime": "12:02 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|120.00P",
@@ -6128,7 +6128,7 @@
                     "lastPrice": 0.01,
                     "priceChange": -0.32,
                     "percentChange": -0.96969696969697,
-                    "volume": 896,
+                    "volume": 897,
                     "openInterest": 1738,
                     "openInterestChange": 797,
                     "volatility": 1.0651,
@@ -6138,14 +6138,14 @@
                     "theta": -0.06492,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810295,
+                    "tradeTime": 1779811333,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6178,7 +6178,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|121.00P",
@@ -6209,7 +6209,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6242,7 +6242,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|122.00P",
@@ -6273,7 +6273,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6306,7 +6306,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|123.00P",
@@ -6337,7 +6337,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6370,7 +6370,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|124.00P",
@@ -6401,7 +6401,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6434,7 +6434,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|125.00P",
@@ -6465,7 +6465,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6498,7 +6498,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|126.00P",
@@ -6529,7 +6529,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6562,7 +6562,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|127.00P",
@@ -6593,7 +6593,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6626,7 +6626,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|128.00P",
@@ -6657,7 +6657,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6690,7 +6690,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|129.00P",
@@ -6721,7 +6721,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6737,7 +6737,7 @@
                 "lastPrice": "0.29",
                 "priceChange": "-1.25",
                 "percentChange": "-81.17%",
-                "volume": "1,526",
+                "volume": "1,528",
                 "openInterest": "3,270",
                 "openInterestChange": "+216",
                 "volatility": "85.74%",
@@ -6747,14 +6747,14 @@
                 "theta": "-0.5093",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:56 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|130.00P",
@@ -6768,7 +6768,7 @@
                     "lastPrice": 0.29,
                     "priceChange": -1.25,
                     "percentChange": -0.81168831168831,
-                    "volume": 1526,
+                    "volume": 1528,
                     "openInterest": 3270,
                     "openInterestChange": 216,
                     "volatility": 0.8574,
@@ -6778,14 +6778,14 @@
                     "theta": -0.509324,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779810993,
+                    "tradeTime": 1779811260,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6818,7 +6818,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|131.00P",
@@ -6849,7 +6849,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6882,7 +6882,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|132.00P",
@@ -6913,7 +6913,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -6946,7 +6946,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|133.00P",
@@ -6977,7 +6977,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7010,7 +7010,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|134.00P",
@@ -7041,7 +7041,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7054,10 +7054,10 @@
                 "bidPrice": "0.81",
                 "midpoint": "1.03",
                 "askPrice": "1.25",
-                "lastPrice": "1.16",
-                "priceChange": "-1.82",
-                "percentChange": "-61.07%",
-                "volume": "299",
+                "lastPrice": "1.15",
+                "priceChange": "-1.83",
+                "percentChange": "-61.41%",
+                "volume": "305",
                 "openInterest": "1,332",
                 "openInterestChange": "+340",
                 "volatility": "75.90%",
@@ -7067,14 +7067,14 @@
                 "theta": "-0.9377",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:59 ET",
+                "tradeTime": "12:05 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|135.00P",
@@ -7085,10 +7085,10 @@
                     "bidPrice": 0.81,
                     "midpoint": 1.03,
                     "askPrice": 1.25,
-                    "lastPrice": 1.16,
-                    "priceChange": -1.82,
-                    "percentChange": -0.61073825503356,
-                    "volume": 299,
+                    "lastPrice": 1.15,
+                    "priceChange": -1.83,
+                    "percentChange": -0.61409395973154,
+                    "volume": 305,
                     "openInterest": 1332,
                     "openInterestChange": 340,
                     "volatility": 0.759,
@@ -7098,14 +7098,14 @@
                     "theta": -0.937651,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811163,
+                    "tradeTime": 1779811559,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7118,10 +7118,10 @@
                 "bidPrice": "1.07",
                 "midpoint": "1.30",
                 "askPrice": "1.52",
-                "lastPrice": "1.49",
-                "priceChange": "-2.11",
-                "percentChange": "-58.61%",
-                "volume": "123",
+                "lastPrice": "1.40",
+                "priceChange": "-2.20",
+                "percentChange": "-61.11%",
+                "volume": "133",
                 "openInterest": "326",
                 "openInterestChange": "+220",
                 "volatility": "73.10%",
@@ -7131,14 +7131,14 @@
                 "theta": "-0.9773",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:56 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|136.00P",
@@ -7149,10 +7149,10 @@
                     "bidPrice": 1.07,
                     "midpoint": 1.3,
                     "askPrice": 1.52,
-                    "lastPrice": 1.49,
-                    "priceChange": -2.11,
-                    "percentChange": -0.58611111111111,
-                    "volume": 123,
+                    "lastPrice": 1.4,
+                    "priceChange": -2.2,
+                    "percentChange": -0.61111111111111,
+                    "volume": 133,
                     "openInterest": 326,
                     "openInterestChange": 220,
                     "volatility": 0.731,
@@ -7162,14 +7162,14 @@
                     "theta": -0.977319,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811010,
+                    "tradeTime": 1779811395,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7202,7 +7202,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|137.00P",
@@ -7233,7 +7233,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7246,10 +7246,10 @@
                 "bidPrice": "2.00",
                 "midpoint": "2.25",
                 "askPrice": "2.50",
-                "lastPrice": "2.40",
-                "priceChange": "-1.65",
-                "percentChange": "-40.74%",
-                "volume": "203",
+                "lastPrice": "2.11",
+                "priceChange": "-1.94",
+                "percentChange": "-47.90%",
+                "volume": "205",
                 "openInterest": "205",
                 "openInterestChange": "+66",
                 "volatility": "75.44%",
@@ -7259,14 +7259,14 @@
                 "theta": "-1.0793",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:57 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|138.00P",
@@ -7277,10 +7277,10 @@
                     "bidPrice": 2,
                     "midpoint": 2.25,
                     "askPrice": 2.5,
-                    "lastPrice": 2.4,
-                    "priceChange": -1.65,
-                    "percentChange": -0.40740740740741,
-                    "volume": 203,
+                    "lastPrice": 2.11,
+                    "priceChange": -1.94,
+                    "percentChange": -0.47901234567901,
+                    "volume": 205,
                     "openInterest": 205,
                     "openInterestChange": 66,
                     "volatility": 0.7544,
@@ -7290,14 +7290,14 @@
                     "theta": -1.079294,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811045,
+                    "tradeTime": 1779811319,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7330,7 +7330,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|139.00P",
@@ -7361,7 +7361,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7374,10 +7374,10 @@
                 "bidPrice": "2.97",
                 "midpoint": "3.56",
                 "askPrice": "4.15",
-                "lastPrice": "3.74",
-                "priceChange": "-1.26",
-                "percentChange": "-25.20%",
-                "volume": "575",
+                "lastPrice": "3.71",
+                "priceChange": "-1.29",
+                "percentChange": "-25.80%",
+                "volume": "576",
                 "openInterest": "972",
                 "openInterestChange": "+158",
                 "volatility": "80.21%",
@@ -7394,7 +7394,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|140.00P",
@@ -7405,10 +7405,10 @@
                     "bidPrice": 2.97,
                     "midpoint": 3.56,
                     "askPrice": 4.15,
-                    "lastPrice": 3.74,
-                    "priceChange": -1.26,
-                    "percentChange": -0.252,
-                    "volume": 575,
+                    "lastPrice": 3.71,
+                    "priceChange": -1.29,
+                    "percentChange": -0.258,
+                    "volume": 576,
                     "openInterest": 972,
                     "openInterestChange": 158,
                     "volatility": 0.8021,
@@ -7418,14 +7418,14 @@
                     "theta": -1.078305,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779811173,
+                    "tradeTime": 1779811187,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7438,10 +7438,10 @@
                 "bidPrice": "3.25",
                 "midpoint": "4.20",
                 "askPrice": "5.15",
-                "lastPrice": "4.19",
-                "priceChange": "-1.34",
-                "percentChange": "-24.23%",
-                "volume": "66",
+                "lastPrice": "4.31",
+                "priceChange": "-1.22",
+                "percentChange": "-22.06%",
+                "volume": "67",
                 "openInterest": "652",
                 "openInterestChange": "+17",
                 "volatility": "78.51%",
@@ -7451,14 +7451,14 @@
                 "theta": "-0.9730",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:26 ET",
+                "tradeTime": "12:01 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|141.00P",
@@ -7469,10 +7469,10 @@
                     "bidPrice": 3.25,
                     "midpoint": 4.2,
                     "askPrice": 5.15,
-                    "lastPrice": 4.19,
-                    "priceChange": -1.34,
-                    "percentChange": -0.24231464737794,
-                    "volume": 66,
+                    "lastPrice": 4.31,
+                    "priceChange": -1.22,
+                    "percentChange": -0.22061482820976,
+                    "volume": 67,
                     "openInterest": 652,
                     "openInterestChange": 17,
                     "volatility": 0.7851,
@@ -7482,14 +7482,14 @@
                     "theta": -0.97299,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779809178,
+                    "tradeTime": 1779811303,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7522,7 +7522,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|142.00P",
@@ -7553,7 +7553,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7586,7 +7586,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|143.00P",
@@ -7617,7 +7617,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7650,7 +7650,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|144.00P",
@@ -7681,7 +7681,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7714,7 +7714,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|145.00P",
@@ -7745,7 +7745,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7778,7 +7778,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|146.00P",
@@ -7809,7 +7809,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7842,7 +7842,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|147.00P",
@@ -7873,7 +7873,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7906,7 +7906,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|148.00P",
@@ -7937,7 +7937,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -7970,7 +7970,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|149.00P",
@@ -8001,7 +8001,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8014,10 +8014,10 @@
                 "bidPrice": "11.65",
                 "midpoint": "12.05",
                 "askPrice": "12.45",
-                "lastPrice": "12.59",
-                "priceChange": "+1.84",
-                "percentChange": "+17.12%",
-                "volume": "21",
+                "lastPrice": "12.43",
+                "priceChange": "+1.68",
+                "percentChange": "+15.63%",
+                "volume": "22",
                 "openInterest": "573",
                 "openInterestChange": "+90",
                 "volatility": "124.98%",
@@ -8027,14 +8027,14 @@
                 "theta": "-0.8025",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:02 ET",
+                "tradeTime": "12:00 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|150.00P",
@@ -8045,10 +8045,10 @@
                     "bidPrice": 11.65,
                     "midpoint": 12.05,
                     "askPrice": 12.45,
-                    "lastPrice": 12.59,
-                    "priceChange": 1.84,
-                    "percentChange": 0.17116279069767,
-                    "volume": 21,
+                    "lastPrice": 12.43,
+                    "priceChange": 1.68,
+                    "percentChange": 0.15627906976744,
+                    "volume": 22,
                     "openInterest": 573,
                     "openInterestChange": 90,
                     "volatility": 1.2498,
@@ -8058,14 +8058,14 @@
                     "theta": -0.802533,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779807727,
+                    "tradeTime": 1779811230,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8098,7 +8098,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|151.00P",
@@ -8129,7 +8129,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8162,7 +8162,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|152.00P",
@@ -8193,7 +8193,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8226,7 +8226,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|153.00P",
@@ -8257,7 +8257,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8290,7 +8290,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|154.00P",
@@ -8321,7 +8321,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8354,7 +8354,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|155.00P",
@@ -8385,7 +8385,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8418,7 +8418,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|156.00P",
@@ -8449,7 +8449,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8462,10 +8462,10 @@
                 "bidPrice": "18.20",
                 "midpoint": "19.17",
                 "askPrice": "20.15",
-                "lastPrice": "19.44",
-                "priceChange": "+1.11",
-                "percentChange": "+6.06%",
-                "volume": "4",
+                "lastPrice": "19.46",
+                "priceChange": "+1.13",
+                "percentChange": "+6.16%",
+                "volume": "7",
                 "openInterest": "6",
                 "openInterestChange": "-17",
                 "volatility": "99.99%",
@@ -8475,14 +8475,14 @@
                 "theta": "-0.0559",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "10:18 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|157.00P",
@@ -8493,10 +8493,10 @@
                     "bidPrice": 18.2,
                     "midpoint": 19.17,
                     "askPrice": 20.15,
-                    "lastPrice": 19.44,
-                    "priceChange": 1.11,
-                    "percentChange": 0.060556464811784,
-                    "volume": 4,
+                    "lastPrice": 19.46,
+                    "priceChange": 1.13,
+                    "percentChange": 0.06164757228587,
+                    "volume": 7,
                     "openInterest": 6,
                     "openInterestChange": -17,
                     "volatility": 0.9999,
@@ -8506,14 +8506,14 @@
                     "theta": -0.055886,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779805086,
+                    "tradeTime": 1779811437,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8526,10 +8526,10 @@
                 "bidPrice": "19.15",
                 "midpoint": "20.35",
                 "askPrice": "21.55",
-                "lastPrice": "20.48",
-                "priceChange": "+2.53",
-                "percentChange": "+14.09%",
-                "volume": "5",
+                "lastPrice": "20.44",
+                "priceChange": "+2.49",
+                "percentChange": "+13.87%",
+                "volume": "8",
                 "openInterest": "42",
                 "openInterestChange": "unch",
                 "volatility": "150.32%",
@@ -8539,14 +8539,14 @@
                 "theta": "-0.5012",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "10:14 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|158.00P",
@@ -8557,10 +8557,10 @@
                     "bidPrice": 19.15,
                     "midpoint": 20.35,
                     "askPrice": 21.55,
-                    "lastPrice": 20.48,
-                    "priceChange": 2.53,
-                    "percentChange": 0.14094707520891,
-                    "volume": 5,
+                    "lastPrice": 20.44,
+                    "priceChange": 2.49,
+                    "percentChange": 0.13871866295265,
+                    "volume": 8,
                     "openInterest": 42,
                     "openInterestChange": 0,
                     "volatility": 1.5032,
@@ -8570,14 +8570,14 @@
                     "theta": -0.501158,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779804859,
+                    "tradeTime": 1779811437,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8610,7 +8610,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|159.00P",
@@ -8641,7 +8641,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8674,7 +8674,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|160.00P",
@@ -8705,7 +8705,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8738,7 +8738,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|161.00P",
@@ -8769,7 +8769,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8802,7 +8802,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|162.00P",
@@ -8833,7 +8833,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8866,7 +8866,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|163.00P",
@@ -8897,7 +8897,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8930,7 +8930,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|164.00P",
@@ -8961,7 +8961,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -8974,10 +8974,10 @@
                 "bidPrice": "26.25",
                 "midpoint": "26.83",
                 "askPrice": "27.40",
-                "lastPrice": "27.42",
-                "priceChange": "+9.63",
-                "percentChange": "+54.13%",
-                "volume": "21",
+                "lastPrice": "27.03",
+                "priceChange": "+9.24",
+                "percentChange": "+51.94%",
+                "volume": "22",
                 "openInterest": "21",
                 "openInterestChange": "unch",
                 "volatility": "198.52%",
@@ -8987,14 +8987,14 @@
                 "theta": "-0.6848",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:01 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|165.00P",
@@ -9005,10 +9005,10 @@
                     "bidPrice": 26.25,
                     "midpoint": 26.83,
                     "askPrice": 27.4,
-                    "lastPrice": 27.42,
-                    "priceChange": 9.63,
-                    "percentChange": 0.54131534569983,
-                    "volume": 21,
+                    "lastPrice": 27.03,
+                    "priceChange": 9.24,
+                    "percentChange": 0.51939291736931,
+                    "volume": 22,
                     "openInterest": 21,
                     "openInterestChange": 0,
                     "volatility": 1.9852,
@@ -9018,14 +9018,14 @@
                     "theta": -0.684845,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779807689,
+                    "tradeTime": 1779811412,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9058,7 +9058,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|166.00P",
@@ -9089,7 +9089,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9102,10 +9102,10 @@
                 "bidPrice": "28.15",
                 "midpoint": "28.73",
                 "askPrice": "29.30",
-                "lastPrice": "28.88",
-                "priceChange": "unch",
-                "percentChange": "unch",
-                "volume": "1",
+                "lastPrice": "29.01",
+                "priceChange": "+0.13",
+                "percentChange": "+0.45%",
+                "volume": "2",
                 "openInterest": "1",
                 "openInterestChange": "unch",
                 "volatility": "0.00%",
@@ -9115,14 +9115,14 @@
                 "theta": "0.0000",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "11:14 ET",
+                "tradeTime": "12:03 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|167.00P",
@@ -9133,10 +9133,10 @@
                     "bidPrice": 28.15,
                     "midpoint": 28.73,
                     "askPrice": 29.3,
-                    "lastPrice": 28.88,
-                    "priceChange": 0,
-                    "percentChange": 0,
-                    "volume": 1,
+                    "lastPrice": 29.01,
+                    "priceChange": 0.13,
+                    "percentChange": 0.0045013850415513,
+                    "volume": 2,
                     "openInterest": 1,
                     "openInterestChange": 0,
                     "volatility": 0,
@@ -9146,14 +9146,14 @@
                     "theta": 0,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": 1779808494,
+                    "tradeTime": 1779811412,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9186,7 +9186,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|168.00P",
@@ -9217,7 +9217,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9250,7 +9250,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|169.00P",
@@ -9281,7 +9281,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9314,7 +9314,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|170.00P",
@@ -9345,7 +9345,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9378,7 +9378,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|171.00P",
@@ -9409,7 +9409,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9442,7 +9442,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|172.00P",
@@ -9473,7 +9473,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9506,7 +9506,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|173.00P",
@@ -9537,7 +9537,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9570,7 +9570,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|174.00P",
@@ -9601,7 +9601,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9634,7 +9634,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|175.00P",
@@ -9665,7 +9665,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9698,7 +9698,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|176.00P",
@@ -9729,7 +9729,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9762,7 +9762,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|177.00P",
@@ -9793,7 +9793,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9826,7 +9826,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|177.50P",
@@ -9857,7 +9857,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9890,7 +9890,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|178.00P",
@@ -9921,7 +9921,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -9954,7 +9954,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|179.00P",
@@ -9985,7 +9985,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10018,7 +10018,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|180.00P",
@@ -10049,7 +10049,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10062,10 +10062,10 @@
                 "bidPrice": "42.20",
                 "midpoint": "43.40",
                 "askPrice": "44.60",
-                "lastPrice": "0.00",
-                "priceChange": "unch",
-                "percentChange": "unch",
-                "volume": "0",
+                "lastPrice": "42.20",
+                "priceChange": "-1.18",
+                "percentChange": "-2.72%",
+                "volume": "2",
                 "openInterest": "0",
                 "openInterestChange": "unch",
                 "volatility": "273.20%",
@@ -10075,14 +10075,14 @@
                 "theta": "-0.7172",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "N/A",
+                "tradeTime": "12:05 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|181.00P",
@@ -10093,10 +10093,10 @@
                     "bidPrice": 42.2,
                     "midpoint": 43.4,
                     "askPrice": 44.6,
-                    "lastPrice": 0,
-                    "priceChange": 0,
-                    "percentChange": 0,
-                    "volume": 0,
+                    "lastPrice": 42.2,
+                    "priceChange": -1.18,
+                    "percentChange": -0.027201475334255,
+                    "volume": 2,
                     "openInterest": 0,
                     "openInterestChange": 0,
                     "volatility": 2.732,
@@ -10106,14 +10106,14 @@
                     "theta": -0.717216,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": -62169984000,
+                    "tradeTime": 1779811524,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10126,10 +10126,10 @@
                 "bidPrice": "42.95",
                 "midpoint": "44.25",
                 "askPrice": "45.55",
-                "lastPrice": "0.00",
-                "priceChange": "unch",
-                "percentChange": "unch",
-                "volume": "0",
+                "lastPrice": "43.18",
+                "priceChange": "-1.11",
+                "percentChange": "-2.51%",
+                "volume": "2",
                 "openInterest": "0",
                 "openInterestChange": "unch",
                 "volatility": "240.35%",
@@ -10139,14 +10139,14 @@
                 "theta": "-0.3303",
                 "optionType": "Put",
                 "daysToExpiration": "1",
-                "tradeTime": "N/A",
+                "tradeTime": "12:05 ET",
                 "averageVolatility": "76.51%",
                 "historicVolatility30d": "58.62%",
                 "baseNextEarningsDate": "08/04/17",
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|182.00P",
@@ -10157,10 +10157,10 @@
                     "bidPrice": 42.95,
                     "midpoint": 44.25,
                     "askPrice": 45.55,
-                    "lastPrice": 0,
-                    "priceChange": 0,
-                    "percentChange": 0,
-                    "volume": 0,
+                    "lastPrice": 43.18,
+                    "priceChange": -1.11,
+                    "percentChange": -0.02506209076541,
+                    "volume": 2,
                     "openInterest": 0,
                     "openInterestChange": 0,
                     "volatility": 2.4035,
@@ -10170,14 +10170,14 @@
                     "theta": -0.330326,
                     "optionType": "Put",
                     "daysToExpiration": 1,
-                    "tradeTime": -62169984000,
+                    "tradeTime": 1779811524,
                     "averageVolatility": 0.7651,
                     "historicVolatility30d": 0.5862,
                     "baseNextEarningsDate": "2017-08-04",
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10210,7 +10210,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|182.50P",
@@ -10241,7 +10241,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10274,7 +10274,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|183.00P",
@@ -10305,7 +10305,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10338,7 +10338,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|184.00P",
@@ -10369,7 +10369,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10402,7 +10402,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|185.00P",
@@ -10433,7 +10433,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10466,7 +10466,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|186.00P",
@@ -10497,7 +10497,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10530,7 +10530,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|187.00P",
@@ -10561,7 +10561,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10594,7 +10594,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|187.50P",
@@ -10625,7 +10625,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10658,7 +10658,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|188.00P",
@@ -10689,7 +10689,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10722,7 +10722,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|189.00P",
@@ -10753,7 +10753,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10786,7 +10786,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|190.00P",
@@ -10817,7 +10817,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             },
@@ -10850,7 +10850,7 @@
                 "dividendExDate": "N/A",
                 "baseTimeCode": "--",
                 "expirationType": "weekly",
-                "impliedVolatilityRank1y": "40.30%",
+                "impliedVolatilityRank1y": "40.09%",
                 "symbolType": "Put",
                 "raw": {
                     "symbol": "USO|20260527|191.00P",
@@ -10881,7 +10881,7 @@
                     "dividendExDate": null,
                     "baseTimeCode": "--",
                     "expirationType": "weekly",
-                    "impliedVolatilityRank1y": 40.300430947584,
+                    "impliedVolatilityRank1y": 40.089599671351,
                     "symbolType": "Put"
                 }
             }
