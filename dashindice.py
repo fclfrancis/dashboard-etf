@@ -1448,9 +1448,9 @@ with st.sidebar:
     min_fin       = 0
     multiplicador = 100
 <<<<<<< HEAD
-    focus_pct     = 0.03  # ±3% ao redor do spot
+    focus_pct     = 0.02  # ±3% ao redor do spot
 =======
-    focus_pct     = 0.03
+    focus_pct     = 0.02
 >>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
 # ══════════════════════════════════════════════════════════════════
