@@ -1426,15 +1426,6 @@ with st.sidebar:
     ibov_input = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-<<<<<<< HEAD
-    st.markdown("<div style='color:#ffb400;font-size:13px;font-weight:700;letter-spacing:2px;"
-                "padding:6px 0;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
-
-    ibov_input    = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
-
-    st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-=======
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
     pilares_ativos = {}
     pilares_ativos["EWZ"]  = True
@@ -1447,11 +1438,7 @@ with st.sidebar:
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     min_fin       = 0
     multiplicador = 100
-<<<<<<< HEAD
-    focus_pct     = 0.02  # ±3% ao redor do spot
-=======
-    focus_pct     = 0.02
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
+    focus_pct     = 0.03
 
 # ══════════════════════════════════════════════════════════════════
 # 17 · HEADER
@@ -1871,8 +1858,6 @@ with col_right:
     # ══════════════════════════════════════════════════════════════
     # 20-B · MOMENTUM REAL — Vol/OI por Strike WIN (6 Pilares)
     # Lógica idêntica ao momentum_real.py, adaptada para strike_win
-<<<<<<< HEAD
-=======
     #
     # CORREÇÕES v4.1:
     #   Bug 1 — OI estrutural: usa df_win_all (todos os strikes, inclusive
@@ -1882,17 +1867,10 @@ with col_right:
     #   Bug 2 — Vol/OI por row: ratio calculada APÓS o groupby
     #            (vol_sum / oi_sum), nunca como soma de ratios individuais.
     #            A soma de ratios pode inflar o sinal em +38.000% (SPY).
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
     # ══════════════════════════════════════════════════════════════
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     section("MOMENTUM REAL — VOL/OI  (urgência do fluxo por strike WIN)")
 
-<<<<<<< HEAD
-    _df_mom = df_win_plot[df_win_plot["openInterest"] > 10].copy()
-
-    if not _df_mom.empty:
-        _df_mom["Vol_OI"] = _df_mom["volume"] / _df_mom["openInterest"].replace(0, 1)
-=======
     # Bug 1 fix: OI estrutural vem de df_win_all (vol >= 0)
     # Agrupa volume do dia (só strikes com vol>0, já filtrados em df_win_plot)
     _vol_day = (
@@ -1923,7 +1901,6 @@ with col_right:
     if not _df_mom.empty:
         # Bug 2 fix: ratio calculada sobre o agregado, nunca por row
         _df_mom["Vol_OI"] = _df_mom["_vol_sum"] / _df_mom["_oi_sum"].replace(0, 1)
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
         _urg_threshold = (
             _df_mom["Vol_OI"][_df_mom["Vol_OI"] > 0].quantile(0.75)
@@ -1948,11 +1925,7 @@ with col_right:
                 else:
                     return "🔴 ALERTA MÁXIMO", "Muita proteção aqui. Preço pode cair rápido e forte."
 
-<<<<<<< HEAD
-        _niveis_mom        = []
-=======
         _niveis_mom         = []
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
         _comportamentos_mom = []
         for _, _row in _df_mom.iterrows():
             _nv, _comp = _classif_urgencia_win(_row["Vol_OI"], _row["optionType"], _urg_threshold)
@@ -1970,17 +1943,6 @@ with col_right:
 
         fig_mom = go.Figure()
         for _tipo, _color, _label in zip(
-<<<<<<< HEAD
-            ["Call",       "Put"],
-            [COLOR_CALL,   COLOR_PUT],
-            ["CALL",       "PUT"],
-        ):
-            _df_v = (
-                _df_mom[_df_mom["optionType"] == _tipo]
-                .groupby("strike_win")[["Vol_OI", "nivel", "comportamento"]]
-                .agg({"Vol_OI": "sum", "nivel": "first", "comportamento": "first"})
-                .reset_index()
-=======
             ["Call",     "Put"],
             [COLOR_CALL, COLOR_PUT],
             ["CALL",     "PUT"],
@@ -1993,7 +1955,6 @@ with col_right:
                   "_vol_sum", "_oi_sum"]]
                 .copy()
                 .reset_index(drop=True)
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
             )
             if _df_v.empty:
                 continue
@@ -2004,12 +1965,6 @@ with col_right:
                 marker_color=_color,
                 marker_line_width=0,
                 name=_label,
-<<<<<<< HEAD
-                customdata=np.stack([_df_v["nivel"], _df_v["comportamento"]], axis=1),
-                hovertemplate=(
-                    "<b>Strike WIN: %{x:,.0f}</b><br>"
-                    "Vol/OI: %{y:.2f}x<br>"
-=======
                 customdata=np.stack(
                     [_df_v["nivel"], _df_v["comportamento"],
                      _df_v["_vol_sum"], _df_v["_oi_sum"]],
@@ -2019,7 +1974,6 @@ with col_right:
                     "<b>Strike WIN: %{x:,.0f}</b><br>"
                     "Vol/OI: %{y:.2f}x<br>"
                     "Vol dia: %{customdata[2]:,.0f}  |  OI estrutural: %{customdata[3]:,.0f}<br>"
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
                     f"Tipo: {_label}<br>"
                     "──────────────────<br>"
                     "%{customdata[0]}<br>"
@@ -2105,11 +2059,7 @@ with col_right:
             )
     else:
         st.markdown(
-<<<<<<< HEAD
-            alert_box("⚠ Dados insuficientes para calcular Vol/OI (OI > 10 em nenhum strike).", "warning"),
-=======
             alert_box("⚠ Dados insuficientes para calcular Vol/OI (OI estrutural > 10 em nenhum strike).", "warning"),
->>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
             unsafe_allow_html=True,
         )
 
