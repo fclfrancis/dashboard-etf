@@ -1464,8 +1464,6 @@ with st.sidebar:
     ibov_input    = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-    st.markdown("<div style='color:#ffb400;font-size:13px;font-weight:700;letter-spacing:2px;"
-                "padding:6px 0;text-shadow:0 0 4px #ffb400;'>🏛️ PILARES ATIVOS</div>", unsafe_allow_html=True)
 
     pilares_ativos = {}
     pilares_ativos["EWZ"]  = st.checkbox("EWZ — Brasil proxy direto",  value=True, key="pilar_ewz")
@@ -1480,8 +1478,6 @@ with st.sidebar:
     min_fin       = 0
     multiplicador = 100
     focus_pct     = 0.03  # ±3% ao redor do spot
-    st.markdown("<div style='color:#4a7a75;font-size:13px;letter-spacing:1px;margin-top:16px;'>"
-                "V9.6 ENGINE  |  6 PILARES  |  WIN TOTAL v4</div>", unsafe_allow_html=True)
 
 # ══════════════════════════════════════════════════════════════════
 # 17 · HEADER
@@ -1501,7 +1497,6 @@ st.markdown(
     f"border:1px solid rgba(255,180,0,0.2);border-radius:8px;margin-bottom:8px;"
     f"font-family:JetBrains Mono,monospace;font-size:13px;'>"
     f"<span>🎯 <b style='color:#ffb400;'>WIN SPOT</b> <span class='text-win'>{fmt_win(ibov_val) if ibov_val else '—'}</span></span>"
-    f"<span>🏛️ <b style='color:#ffb400;'>PILARES</b> <span class='text-win'>{_pilares_str}</span></span>"
     f"</div>", unsafe_allow_html=True)
 st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
 
@@ -1887,6 +1882,171 @@ with col_right:
     section("TRIPLE PRESSURE MAP WIN  —  DEX · GEX · VANNA  (6 PILARES AGREGADOS)")
     fig_press = build_pressure_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_press, use_container_width=True)
+
+    # ══════════════════════════════════════════════════════════════
+    # 20-B · MOMENTUM REAL — Vol/OI por Strike WIN (6 Pilares)
+    # Lógica idêntica ao momentum_real.py, adaptada para strike_win
+    # ══════════════════════════════════════════════════════════════
+    st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
+    section("MOMENTUM REAL — VOL/OI  (urgência do fluxo por strike WIN)")
+
+    _df_mom = df_win_plot[df_win_plot["openInterest"] > 10].copy()
+
+    if not _df_mom.empty:
+        _df_mom["Vol_OI"] = _df_mom["volume"] / _df_mom["openInterest"].replace(0, 1)
+
+        _urg_threshold = (
+            _df_mom["Vol_OI"][_df_mom["Vol_OI"] > 0].quantile(0.75)
+            if not _df_mom.empty else 1.0
+        )
+
+        def _classif_urgencia_win(vol_oi, tipo, threshold):
+            if vol_oi < 0.3:
+                return "⚪ POSIÇÃO ESTÁTICA",  "Strike sem atividade relevante no momento."
+            elif vol_oi < 1.0:
+                return "🔵 FLUXO NORMAL",      "Nada fora do comum. MM operando normalmente."
+            elif vol_oi < threshold:
+                return "🟡 FLUXO ELEVADO",     "Movimento acima do normal. Fique atento."
+            elif vol_oi < threshold * 2:
+                if tipo == "Call":
+                    return "🟠 URGÊNCIA DETECTADA", "Grandes players comprando. Pressão de alta."
+                else:
+                    return "🟠 URGÊNCIA DETECTADA", "Grandes players se protegendo. Pressão de baixa."
+            else:
+                if tipo == "Call":
+                    return "🔴 ALERTA MÁXIMO", "Muita compra aqui. Preço pode subir rápido e forte."
+                else:
+                    return "🔴 ALERTA MÁXIMO", "Muita proteção aqui. Preço pode cair rápido e forte."
+
+        _niveis_mom        = []
+        _comportamentos_mom = []
+        for _, _row in _df_mom.iterrows():
+            _nv, _comp = _classif_urgencia_win(_row["Vol_OI"], _row["optionType"], _urg_threshold)
+            _niveis_mom.append(_nv)
+            _comportamentos_mom.append(_comp)
+        _df_mom["nivel"]         = _niveis_mom
+        _df_mom["comportamento"] = _comportamentos_mom
+
+        # Ticks WIN — range idêntico ao dos outros gráficos (focus_pct)
+        _s_lo_m = int(ibov_val * (1 - focus_pct))
+        _s_hi_m = int(ibov_val * (1 + focus_pct))
+        _strikes_mom = sorted(_df_mom["strike_win"].unique())
+        _tick_vals_m = [s for s in _strikes_mom if _s_lo_m <= s <= _s_hi_m] or _strikes_mom
+        _tick_text_m = [_fmt_win_tick(s) for s in _tick_vals_m]
+
+        fig_mom = go.Figure()
+        for _tipo, _color, _label in zip(
+            ["Call",       "Put"],
+            [COLOR_CALL,   COLOR_PUT],
+            ["CALL",       "PUT"],
+        ):
+            _df_v = (
+                _df_mom[_df_mom["optionType"] == _tipo]
+                .groupby("strike_win")[["Vol_OI", "nivel", "comportamento"]]
+                .agg({"Vol_OI": "sum", "nivel": "first", "comportamento": "first"})
+                .reset_index()
+            )
+            if _df_v.empty:
+                continue
+
+            fig_mom.add_trace(go.Bar(
+                x=_df_v["strike_win"],
+                y=_df_v["Vol_OI"],
+                marker_color=_color,
+                marker_line_width=0,
+                name=_label,
+                customdata=np.stack([_df_v["nivel"], _df_v["comportamento"]], axis=1),
+                hovertemplate=(
+                    "<b>Strike WIN: %{x:,.0f}</b><br>"
+                    "Vol/OI: %{y:.2f}x<br>"
+                    f"Tipo: {_label}<br>"
+                    "──────────────────<br>"
+                    "%{customdata[0]}<br>"
+                    "<i>%{customdata[1]}</i>"
+                    "<extra></extra>"
+                ),
+            ))
+
+        # Linha de urgência (p75)
+        fig_mom.add_hline(
+            y=_urg_threshold,
+            line_dash="dash", line_color="#ffa500", line_width=1.5, opacity=0.9,
+            annotation_text=f"URGÊNCIA MM ({_urg_threshold:.2f}x)",
+            annotation_position="top right",
+            annotation_font=dict(color="#ffa500", size=11, family="JetBrains Mono"),
+        )
+        # Linha neutra 1.0×
+        fig_mom.add_hline(
+            y=1.0,
+            line_dash="dot", line_color="#ffffff", line_width=1, opacity=0.35,
+            annotation_text="neutro 1.0x",
+            annotation_position="bottom right",
+            annotation_font=dict(color="#888", size=10, family="JetBrains Mono"),
+        )
+        # Linha do spot WIN
+        fig_mom.add_vline(
+            x=ibov_val,
+            line_dash="dot", line_color=COLOR_NEON, line_width=1.5,
+        )
+        fig_mom.add_annotation(
+            x=ibov_val, y=1.0, xref="x", yref="paper",
+            text=f"SPOT {fmt_win(ibov_val)}",
+            showarrow=False, yshift=8,
+            font=dict(color=COLOR_NEON, size=10, family="JetBrains Mono"),
+            xanchor="center",
+        )
+
+        fig_mom.update_layout(
+            template="plotly_dark",
+            paper_bgcolor="rgba(0,0,0,0)",
+            plot_bgcolor="rgba(8,12,20,0.6)",
+            height=420,
+            barmode="group",
+            showlegend=True,
+            legend=dict(
+                orientation="h", y=1.02, x=1, xanchor="right",
+                font=dict(size=11, family="JetBrains Mono"),
+                bgcolor="rgba(0,0,0,0)",
+            ),
+            margin=dict(l=10, r=10, t=20, b=20),
+            font=dict(family="JetBrains Mono", size=11, color="#ccddf8"),
+            xaxis=dict(
+                gridcolor="rgba(0,255,255,0.06)",
+                tickvals=_tick_vals_m, ticktext=_tick_text_m,
+                tickangle=-45, tickfont=dict(size=11),
+            ),
+            yaxis=dict(
+                gridcolor="rgba(0,255,255,0.06)",
+                title="Vol/OI ratio",
+            ),
+            hoverlabel=dict(
+                font_size=13,
+                font_family="JetBrains Mono",
+                bgcolor="#0a1a20",
+                bordercolor=COLOR_NEON,
+            ),
+        )
+        st.plotly_chart(fig_mom, use_container_width=True)
+
+        # Resumo textual de urgência máxima detectada
+        _mom_max = _df_mom.sort_values("Vol_OI", ascending=False).head(1)
+        if not _mom_max.empty:
+            _mx = _mom_max.iloc[0]
+            _mx_cor = "#ffa500" if _mx["Vol_OI"] >= _urg_threshold else "#8a9bb5"
+            st.markdown(
+                f"<div style='font-family:JetBrains Mono,monospace;font-size:13px;"
+                f"color:{_mx_cor};padding:6px 10px;background:rgba(255,165,0,0.05);"
+                f"border-left:3px solid {_mx_cor};border-radius:4px;margin-top:4px;'>"
+                f"⚡ Máx. urgência: <b>WIN {fmt_win(_mx['strike_win'])}</b> · "
+                f"{_mx['optionType']} · <b>{_mx['Vol_OI']:.2f}x</b> · {_mx['nivel']}"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
+    else:
+        st.markdown(
+            alert_box("⚠ Dados insuficientes para calcular Vol/OI (OI > 10 em nenhum strike).", "warning"),
+            unsafe_allow_html=True,
+        )
 
 # ══════════════════════════════════════════════════════════════════
 # 21 · RADAR INSTITUCIONAL (abaixo do layout 30/70)
