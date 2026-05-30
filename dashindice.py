@@ -1,18 +1,14 @@
 """
 ╔══════════════════════════════════════════════════════════════════╗
 ║   DASHBOARD INSTITUCIONAL MARKET MAKER — MINI ÍNDICE (WIN)      ║
-║   Engine: V9.6  |  Layout: Cyberpunk HUD  |  WIN EDITION V4     ║
+║   Engine: V9.6  |  Layout: Cyberpunk HUD  |  WIN EDITION V4.1   ║
 ║   6 PILARES: EWZ · VALE · PBR · SPY · USO · EEM                ║
 ║   MODO: VISÃO AGREGADA TOTAL — 100% ESPAÇO WIN                  ║
+║                                                                  ║
+║   v4.1 — CORREÇÕES MOMENTUM REAL:                               ║
+║     Bug 1: OI estrutural usa df_win_all (todos strikes, vol>=0) ║
+║     Bug 2: Vol/OI calculado após groupby (ratio do agregado)    ║
 ╚══════════════════════════════════════════════════════════════════╝
-
-MUDANÇAS v4:
-  • Layout 30/70 (col_left / col_right) igual ao dashboard2
-  • Zonas de Impacto Delta restauradas (ic_df / ip_df sobre strikes_agg WIN)
-  • Flow Evolution com pipeline separada — dados brutos por pilar em USD,
-    sem conversão WIN e sem pesos de correlação
-  • Radar Institucional usando z-score dos dados brutos (não ponderados)
-  • Diagnóstico estratégico + Notas de campo
 """
 
 import json, os, re, math, glob, io
@@ -381,7 +377,6 @@ def parse_json(source) -> pd.DataFrame | None:
                 raw = row.get("raw", row)
                 raw["_opt_type"]   = opt_type
                 raw["_strike_str"] = str(raw.get("strikePrice", raw.get("strike", "0")))
-                # Preserva tradeTime numérico (Unix timestamp Barchart)
                 if "tradeTime" not in raw and "tradeTime" in row:
                     raw["tradeTime"] = row["tradeTime"]
                 records.append(raw)
@@ -464,11 +459,9 @@ def _detectar_spot_pcp(df: pd.DataFrame) -> float:
 
 # ══════════════════════════════════════════════════════════════════
 # 7 · ENGINE V9 — cálculo de greeks por linha (espaço USD)
-#    Usado para: Radar Institucional, Flow Evolution
 # ══════════════════════════════════════════════════════════════════
 
 def calcular_v9(df_raw: pd.DataFrame, spot: float, mult: float = 100.0) -> pd.DataFrame:
-    """Calcula GEX/DEX/VANNA/HIRO por linha em espaço USD — sem conversão WIN."""
     df = df_raw[df_raw["volume"] > 0].copy()
     if df.empty: return df
 
@@ -528,7 +521,7 @@ def calcular_v9(df_raw: pd.DataFrame, spot: float, mult: float = 100.0) -> pd.Da
     return pd.DataFrame(records) if records else pd.DataFrame()
 
 # ══════════════════════════════════════════════════════════════════
-# 8 · PROCESSAR INTELIGÊNCIA (usa df_v9 em espaço USD)
+# 8 · PROCESSAR INTELIGÊNCIA
 # ══════════════════════════════════════════════════════════════════
 
 def processar_inteligencia(df: pd.DataFrame, spot: float, threshold: float = 2.5):
@@ -551,7 +544,6 @@ def processar_inteligencia(df: pd.DataFrame, spot: float, threshold: float = 2.5
     if gamma_flip == 0.0 and not gex_by_s.empty:
         gamma_flip = float(gex_by_s.abs().idxmin())
 
-    gf_win = strike_to_win(gamma_flip, spot, 1) if spot > 0 else 0  # placeholder
     if   spot > gamma_flip and net_delta > 0: stat, msg = "success", "🔥 ALTA CONVICÇÃO (Safe Zone) — MMs provêm liquidez para a subida."
     elif spot < gamma_flip and net_delta > 0: stat, msg = "warning", f"🚀 RISCO DE SQUEEZE! MMs precisam cobrir Delta acima de {_fmt_strike(gamma_flip)}"
     elif spot < gamma_flip and net_delta < 0: stat, msg = "danger",  "💀 CASCATA (Falling Knife) — Zona de aceleração negativa. Evite compras."
@@ -576,20 +568,17 @@ def legenda_vanna_ctx(valor, serie, strike, spot):
 
 # ══════════════════════════════════════════════════════════════════
 # 10 · CARGA E PROCESSAMENTO POR PILAR → WIN PONDERADO
-#      (para gráficos e métricas WIN)
 # ══════════════════════════════════════════════════════════════════
 
 def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.DataFrame:
-    """Pipeline WIN: converte para WIN e pondera. Usado para gráficos e níveis."""
     frs = [parse_json(a) for a in arqs]
     frs = [f for f in frs if f is not None and not f.empty]
     if not frs: return pd.DataFrame()
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
 
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
@@ -614,7 +603,7 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
         vega = float(row.get("vega", 0) or 0);   last= float(row.get("lastPrice", 0) or 0)
         bid  = float(row.get("bidPrice", 0) or 0);ask = float(row.get("askPrice", 0) or 0)
 
-        if sk <= 0 or vol <= 0: continue
+        if sk <= 0: continue
         opt_sign   = 1 if opt == "Call" else -1
         sk_win     = _bucket_win(ibov * (sk / sp))
         bid_ask_ok = bid > 0 and ask > 0
@@ -623,17 +612,21 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
         direction  = (1 if last >= mid_price else -1) if last_ok else (0 if bid_ask_ok else 0)
         greeks_ok  = not (dlt == 0 and gma == 0 and vega == 0 and sk != sp)
 
-        gex_vol  = gma * vol * _MULT * SG * opt_sign * direction * peso if greeks_ok and direction != 0 else 0.0
+        # OI estrutural — incluído independente de vol (fix Bug 1)
         gex_oi   = gma * oi  * _MULT * SG * opt_sign * peso if greeks_ok else 0.0
-        dex_vol  = dlt * vol * _MULT * SD * direction * peso
         dex_oi   = dlt * oi  * _MULT * SD * opt_sign  * peso
+
+        # Fluxo do dia — requer vol > 0
+        gex_vol  = gma * vol * _MULT * SG * opt_sign * direction * peso if greeks_ok and direction != 0 and vol > 0 else 0.0
+        dex_vol  = dlt * vol * _MULT * SD * direction * peso if vol > 0 else 0.0
         vanna_vol= ((dlt * vega / sp) * vol * _MULT * direction * opt_sign * peso
-                    if greeks_ok and sp > 0 and direction != 0 else 0.0)
-        fin_flow = mid_price * vol * _MULT * peso
+                    if greeks_ok and sp > 0 and direction != 0 and vol > 0 else 0.0)
+        fin_flow = mid_price * vol * _MULT * peso if vol > 0 else 0.0
 
         rows.append({
             "strike_win": sk_win, "optionType": opt,
-            "volume": vol * peso, "openInterest": oi * peso,
+            "volume": vol * peso,
+            "openInterest": oi * peso,       # OI estrutural preservado para todos strikes
             "financial_flow": fin_flow, "gex_total": gex_vol, "gex_oi": gex_oi,
             "dex_total": dex_vol, "dex_oi": dex_oi, "vanna_total": vanna_vol,
         })
@@ -641,15 +634,13 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
 
 
 def _calcular_pilar_normalizado(tk: str, arqs: list, ibov: float, peso: float) -> pd.DataFrame:
-    """Z-score por pilar para arrays Pine Script."""
     frs = [parse_json(a) for a in arqs]
     frs = [f for f in frs if f is not None and not f.empty]
     if not frs: return pd.DataFrame()
     df_p = pd.concat(frs, ignore_index=True)
 
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -708,12 +699,10 @@ def _calcular_pilar_normalizado(tk: str, arqs: list, ibov: float, peso: float) -
     return pd.DataFrame(rows)
 
 # ══════════════════════════════════════════════════════════════════
-# 11 · PIPELINE FLOW EVOLUTION — dados brutos USD, sem peso
-#      Cada pilar processado com calcular_v9 em espaço USD original
+# 11 · PIPELINE FLOW EVOLUTION
 # ══════════════════════════════════════════════════════════════════
 
 def _parse_tradetime(tt_val) -> _dt | None:
-    """Aceita Unix timestamp numérico ou string 'HH:MM CT'."""
     if tt_val is None: return None
     try:
         ts = int(float(str(tt_val)))
@@ -728,21 +717,14 @@ def _parse_tradetime(tt_val) -> _dt | None:
 
 
 def _carregar_pilar_bruto(tk: str, arqs: list, mult: float = 100.0) -> pd.DataFrame:
-    """
-    Pipeline separada para Flow Evolution.
-    Retorna df com colunas: dt, opt, vol, spot, d_flow, g_flow, hiro
-    SEM conversão WIN, SEM pesos de correlação — fluxo bruto em USD.
-    """
     frs = [parse_json(a) for a in arqs]
     frs = [f for f in frs if f is not None and not f.empty]
     if not frs: return pd.DataFrame()
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    # Filtros de qualidade por pilar
-    if tk == "SPY" and "daysToExpiration" in df_p.columns:
-        df_p["dte_num"] = pd.to_numeric(df_p["daysToExpiration"], errors="coerce").fillna(99)
-        df_p = df_p[df_p["dte_num"] >= 2].drop(columns=["dte_num"]).copy()
+    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
+    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM","EWZ","VALE","PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -765,7 +747,6 @@ def _carregar_pilar_bruto(tk: str, arqs: list, mult: float = 100.0) -> pd.DataFr
         tt = row.get("tradeTime", None)
         dt = _parse_tradetime(tt)
         if dt is None: continue
-        # Filtra sentinela 04:00:00 — sem trade real intraday
         if dt.hour == 4 and dt.minute == 0 and dt.second == 0: continue
         vol = float(row.get("volume", 0) or 0)
         if vol <= 0: continue
@@ -780,7 +761,6 @@ def _carregar_pilar_bruto(tk: str, arqs: list, mult: float = 100.0) -> pd.DataFr
 
 
 def _build_temporal_df(frames_bruto: list) -> pd.DataFrame:
-    """Agrega todos os pilares brutos em série temporal."""
     if not frames_bruto: return pd.DataFrame()
     df_t = pd.concat(frames_bruto, ignore_index=True)
     if df_t.empty: return pd.DataFrame()
@@ -853,7 +833,6 @@ def _calcular_metricas_win(df_win: pd.DataFrame, ibov: int) -> dict:
     dex_oi_pos = int(dex_oi_s.idxmax()) if not dex_oi_s.empty else ibov
     dex_oi_neg = int(dex_oi_s.idxmin()) if not dex_oi_s.empty else ibov
 
-    # Zonas de impacto delta (equivalente a ic_df / ip_df do dashboard2, em WIN)
     ic_win = calls_agg.nlargest(2, "dex_total") if not calls_agg.empty else pd.DataFrame()
     ip_win = puts_agg.nsmallest(2, "dex_total") if not puts_agg.empty else pd.DataFrame()
 
@@ -1005,12 +984,9 @@ def _flow_fig(df_t, col_cum, title, color_pos, color_neg, extras=None):
         if vals[i]!=0 and vals[i+1]!=0 and (vals[i]>0)!=(vals[i+1]>0):
             fig.add_vline(x=t.iloc[i],line_color=COLOR_GOLD,line_width=0.8,line_dash="dot",opacity=0.5)
 
-    # Força o eixo X a ocupar o range completo — evita que os dados fiquem
-    # "grudados" à direita quando os timestamps são todos próximos
     from datetime import timedelta
     t_min = t.min(); t_max = t.max()
     span  = t_max - t_min
-    # margem de 5% do span em cada lado, mínimo de 5 minutos
     margin = max(span * 0.05, timedelta(minutes=5))
     x_range = [t_min - margin, t_max + margin]
 
@@ -1075,7 +1051,6 @@ def _construir_niveis_win_agg(m: dict, ibov: int) -> list:
 
 
 def _niveis_to_pine(niveis, pilares_str, ibov):
-    """Gera apenas o bloco display_levels() — usado internamente por _gerar_pine_script_completo."""
     from collections import defaultdict
     MAX_TAGS = 3; OFFSET = 50
     def _tag(nome):
@@ -1115,16 +1090,8 @@ def _niveis_to_pine(niveis, pilares_str, ibov):
 
 
 def _gerar_pine_script_completo(niveis, frames_norm, ibov, pilares_str):
-    """
-    Gera o script Pine Script completo e atualizado, pronto para colar no TradingView.
-    Inclui: template fixo + arrays calculados + display_levels() com os níveis.
-    """
-    # ── Arrays ────────────────────────────────────────────────────
     arrays_str = _arrays_pine(frames_norm, ibov, pilares_str) if frames_norm else "// Sem dados de arrays."
-
-    # ── Bloco display_levels ──────────────────────────────────────
     display_body = _niveis_to_pine(niveis, pilares_str, ibov)
-
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     script = f"""//@version=6
@@ -1259,7 +1226,6 @@ if barstate.islast
     x_base_gv  = left_index + gv_offset_barras
     x_base_dex = left_index + dex_offset_barras
 
-    // NET GEX VOL e OI (lado esquerdo)
     valid_gex = math.min(array.size(gex_strikes), array.size(gex_call_values))
     valid_gex := math.min(valid_gex, array.size(gex_put_values))
     if valid_gex > 0
@@ -1290,7 +1256,6 @@ if barstate.islast
                 cor_vol  = net_vol > 0 ? color.new(gv_cor_net_pos, gv_opacidade) : color.new(gv_cor_net_neg, gv_opacidade)
                 array.push(boxes, box.new(left=x_base_gv - int(norm_vol), top=int(sk) + gv_dist_y, right=x_base_gv, bottom=int(sk) - gv_dist_y, xloc=xloc.bar_index, bgcolor=cor_vol, border_color=na, border_width=0))
 
-    // VOLUME DOMINANTE (lado direito)
     valid_vol = math.min(array.size(vol_strikes), array.size(vol_call_values))
     valid_vol := math.min(valid_vol, array.size(vol_put_values))
     if valid_vol > 0
@@ -1309,7 +1274,6 @@ if barstate.islast
                 cor_v = cv >= pv ? color.new(gv_cor_vol_call, opa_v) : color.new(gv_cor_vol_put, opa_v)
                 array.push(boxes, box.new(left=x_base_gv, top=int(sk) + gv_dist_y, right=x_base_gv + int(norm), bottom=int(sk) - gv_dist_y, xloc=xloc.bar_index, bgcolor=cor_v, border_color=na, border_width=0))
 
-    // NET DEX VOL e OI
     valid_dex = math.min(array.size(dex_strikes), array.size(dex_call_values))
     valid_dex := math.min(valid_dex, array.size(dex_put_values))
     if valid_dex > 0
@@ -1405,10 +1369,7 @@ def _arrays_pine(frames_norm, ibov, pilares_str):
 # ══════════════════════════════════════════════════════════════════
 
 with st.sidebar:
-    st.markdown("<div style='font-family:Inter,sans-serif;font-size:14px;font-weight:700;"
-                "color:#0ff;letter-spacing:2px;padding:10px 0 16px;text-shadow:0 0 6px #0ff;'>⚙ SETUP OPERACIONAL</div>",
-                unsafe_allow_html=True)
-
+    # ── Configurações GitHub (ocultas — sem exibição na sidebar) ──
     GITHUB_USER   = "fclfrancis"
     GITHUB_REPO   = "dashboard-etf"
     GITHUB_BRANCH = "main"
@@ -1443,41 +1404,54 @@ with st.sidebar:
 
     if nomes_disponiveis:
         tickers_encontrados = agrupar_por_ticker(nomes_disponiveis)
-        tks_ok = list(tickers_encontrados.keys())
-        st.info(f"✅ {len(nomes_disponiveis)} arquivos | Pilares: {', '.join(tks_ok) if tks_ok else '—'}")
-        with st.expander("📄 Ver arquivos"):
-            st.write(nomes_disponiveis)
-    else:
-        st.warning("⚠ Nenhum arquivo encontrado na pasta 'dados/' do repositório.")
 
-    st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-
+    # Snapshot: seletor oculto via CSS — funcional mas invisível
     snapshots = {}
     if nomes_disponiveis: snapshots = agrupar_snapshots(nomes_disponiveis)
-    if snapshots: momento = st.selectbox("📅 Snapshot (data):", list(snapshots.keys()))
-    else: momento = None; st.info("Aguardando arquivos no GitHub...")
+
+    # CSS para ocultar tudo acima de PARÂMETROS WIN na sidebar
+    st.markdown("""
+    <style>
+    /* Oculta o seletor de snapshot mas mantém funcional via key */
+    div[data-testid='stSidebar'] div[data-testid='stSelectbox'] { display: none !important; }
+    </style>""", unsafe_allow_html=True)
+
+    if snapshots: momento = st.selectbox("Snapshot:", list(snapshots.keys()), key="snapshot_hidden", label_visibility="collapsed")
+    else: momento = None
+
+    # ── Único elemento visível: PARÂMETROS WIN ────────────────────
+    st.markdown("<div style='color:#ffb400;font-size:14px;font-weight:700;letter-spacing:2px;"
+                "padding:16px 0 8px;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
+
+    ibov_input = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
+<<<<<<< HEAD
     st.markdown("<div style='color:#ffb400;font-size:13px;font-weight:700;letter-spacing:2px;"
                 "padding:6px 0;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
 
     ibov_input    = st.number_input("📊 WIN Atual (pts):", value=0, step=100, format="%d")
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
+=======
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
     pilares_ativos = {}
-    pilares_ativos["EWZ"]  = st.checkbox("EWZ — Brasil proxy direto",  value=True, key="pilar_ewz")
-    pilares_ativos["VALE"] = st.checkbox("VALE — Mineração",            value=True, key="pilar_vale")
-    pilares_ativos["PBR"]  = st.checkbox("PBR — Petróleo Brasil",       value=True, key="pilar_pbr")
-    pilares_ativos["SPY"]  = st.checkbox("SPY — Macro global",          value=True, key="pilar_spy")
-    pilares_ativos["USO"]  = st.checkbox("USO — Petróleo macro",        value=True, key="pilar_uso")
-    pilares_ativos["EEM"]  = st.checkbox("EEM — Macro emergentes",      value=True, key="pilar_eem")
+    pilares_ativos["EWZ"]  = True
+    pilares_ativos["VALE"] = True
+    pilares_ativos["PBR"]  = True
+    pilares_ativos["SPY"]  = True
+    pilares_ativos["USO"]  = True
+    pilares_ativos["EEM"]  = True
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-    # Valores fixos — não expostos na UI
     min_fin       = 0
     multiplicador = 100
+<<<<<<< HEAD
     focus_pct     = 0.03  # ±3% ao redor do spot
+=======
+    focus_pct     = 0.03
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
 # ══════════════════════════════════════════════════════════════════
 # 17 · HEADER
@@ -1487,8 +1461,8 @@ ibov_val = int(ibov_input)
 
 st.markdown(
     f"<div style='display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;'>"
-    f"<h3 style='margin:0;'>📡 PAINEL WIN AGREGADO • MARKET MAKER — 6 PILARES</h3>"
-    f"<span style='color:#8a9bb5;font-size:13px;'>⏱️ {datetime.now().strftime('%H:%M:%S')} | V9.6-WIN-v4</span>"
+    f"<h3 style='margin:0;'>📡 PAINEL WIN AGREGADO • MARKET MAKER</h3>"
+    f"<span style='color:#8a9bb5;font-size:13px;'>⏱️ {datetime.now().strftime('%H:%M:%S')} | V9.6-WIN-v4.2</span>"
     f"</div>", unsafe_allow_html=True)
 
 _pilares_str = " · ".join([tk for tk, ativo in pilares_ativos.items() if ativo])
@@ -1512,22 +1486,27 @@ if ibov_val == 0:
     st.stop()
 
 # ══════════════════════════════════════════════════════════════════
-# 19 · PROCESSAMENTO — PIPELINE WIN (gráficos/métricas) +
-#                      PIPELINE BRUTA USD (Flow Evolution/Radar)
+# 19 · PROCESSAMENTO
 # ══════════════════════════════════════════════════════════════════
 
-frames_win   = []   # WIN ponderado → gráficos e métricas
-frames_norm  = []   # z-score → arrays Pine
-frames_bruto = []   # bruto USD sem peso → Flow Evolution
+frames_win   = []
+frames_norm  = []
+frames_bruto = []
 pilares_ok   = []
 
-# Referência: spot do pilar principal (EWZ) para uso nas métricas brutas
 _spot_ref    = 0.0
-_v9_ref_df   = pd.DataFrame()  # v9 do EWZ para Radar e Diagnóstico
+_v9_ref_df   = pd.DataFrame()
 
 def _get_arqs_github(tk):
-    """Baixa JSONs do GitHub e retorna lista de objetos StringIO para parse_json."""
-    nomes = tickers_encontrados.get(tk, [])
+    # ── Correção 1: filtra por data do pregão mais recente ──────
+    # Cada arquivo tem a data no nome (ex: ETF_EWZ_2026-05-29_...).
+    # Só carrega arquivos cuja data bate com o snapshot selecionado
+    # (variável `momento`), evitando misturar pregões diferentes.
+    nomes_tk = tickers_encontrados.get(tk, [])
+    nomes = [n for n in nomes_tk if momento and momento in n]
+    if not nomes:
+        # fallback: usa qualquer arquivo disponível do ticker
+        nomes = nomes_tk
     arqs = []
     for nome in nomes:
         js = baixar_json_github_win(nome)
@@ -1542,22 +1521,18 @@ with st.spinner("⚙️ Processando pilares..."):
         if not arqs: continue
         peso = _PESOS_CORR[tk]
 
-        # Pipeline WIN
         df_win_pilar = _carregar_pilar_win(tk, arqs, ibov_val, peso)
         if not df_win_pilar.empty:
             frames_win.append(df_win_pilar); pilares_ok.append(tk)
 
-        # Pipeline z-score Pine
         df_norm_pilar = _calcular_pilar_normalizado(tk, arqs, ibov_val, peso)
         if not df_norm_pilar.empty:
             frames_norm.append(df_norm_pilar)
 
-        # Pipeline bruta USD (Flow Evolution) — sem peso, sem conversão WIN
         df_bruto = _carregar_pilar_bruto(tk, arqs, float(multiplicador))
         if not df_bruto.empty:
             frames_bruto.append(df_bruto)
 
-        # Mantém df v9 do EWZ para Radar Institucional e Diagnóstico
         if tk == "EWZ" and arqs:
             frs_ref = [parse_json(a) for a in arqs]
             frs_ref = [f for f in frs_ref if f is not None and not f.empty]
@@ -1574,8 +1549,6 @@ if not frames_win:
 pilares_str  = " · ".join(pilares_ok)
 df_win_all   = pd.concat(frames_win, ignore_index=True)
 
-# Filtra pelo range ±focus_pct antes de calcular métricas E gráficos
-# Garante que tabelas e gráficos reflitam exatamente o mesmo universo de strikes
 _s_lo = int(ibov_val * (1 - focus_pct))
 _s_hi = int(ibov_val * (1 + focus_pct))
 df_win_plot = df_win_all[
@@ -1583,7 +1556,6 @@ df_win_plot = df_win_all[
     (df_win_all["strike_win"] <= _s_hi)
 ].copy()
 
-# Fallback: se o filtro eliminar tudo (spot muito fora dos dados), usa completo
 if df_win_plot.empty:
     df_win_plot = df_win_all.copy()
 
@@ -1593,7 +1565,46 @@ if not m:
     st.markdown(alert_box("⚠ Não foi possível calcular métricas.", "warning"), unsafe_allow_html=True)
     st.stop()
 
-# Métricas do pilar de referência (EWZ) para Radar e Diagnóstico
+# ── Correção 2: alerta de convicção derivado dos 6 pilares WIN ──
+# Usa net_gex e net_dex de _calcular_metricas_win (já calculado em m)
+# em vez de processar_inteligencia(EWZ). Mantém _v9_ref_df só para
+# o Radar Institucional (whales por z-score em espaço USD do EWZ).
+
+def _alerta_agregado_win(m: dict, ibov: int) -> tuple:
+    """
+    Deriva o alerta de convicção a partir das métricas WIN agregadas.
+    Lógica espelhada de processar_inteligencia, mas usando:
+      - net_gex  (GEX dos 6 pilares, espaço WIN)  como indicador de regime
+      - net_dex  (DEX dos 6 pilares, espaço WIN)  como indicador direcional
+      - gamma_flip WIN                             como divisor de regime
+    Retorna (status, mensagem) para exibição no alerta principal.
+    """
+    net_gex    = m["net_gex"]
+    net_dex    = m["net_dex"]
+    gamma_flip = m["gamma_flip"]
+    gamma_wall = m["gamma_wall"]
+
+    # Regime: Long Gamma (spot acima do flip) vs Short Gamma (abaixo)
+    spot_acima_flip = ibov > gamma_flip
+
+    if spot_acima_flip and net_dex > 0 and net_gex > 0:
+        return "success", "🔥 ALTA CONVICÇÃO (Safe Zone) — Long Gamma + fluxo altista. MMs provêm liquidez para a subida."
+    elif spot_acima_flip and net_dex > 0 and net_gex < 0:
+        return "warning", f"⚡ ATENÇÃO: Fluxo altista mas MM em Short Gamma — volatilidade elevada. Gamma Wall: {fmt_win(gamma_wall)}"
+    elif spot_acima_flip and net_dex <= 0:
+        return "info", f"⚖️ DIVERGÊNCIA: Spot acima do Flip ({fmt_win(gamma_flip)}) mas fluxo vendedor. Aguarde confirmação."
+    elif not spot_acima_flip and net_dex < 0 and net_gex < 0:
+        return "danger", "💀 CASCATA (Falling Knife) — Short Gamma + fluxo baixista. Zona de aceleração negativa."
+    elif not spot_acima_flip and net_dex < 0 and net_gex > 0:
+        return "warning", f"🚀 RISCO DE SQUEEZE! Spot abaixo do Flip ({fmt_win(gamma_flip)}) com fluxo vendedor — reversão possível."
+    elif not spot_acima_flip and net_dex >= 0:
+        return "info", f"🔄 RECUPERAÇÃO TENTATIVA: Fluxo comprador abaixo do Flip ({fmt_win(gamma_flip)}). Confirme rompimento."
+    else:
+        return "info", "⚖️ MERCADO EM EQUILÍBRIO / CONSOLIDAÇÃO — Aguarde confirmação."
+
+_alerta_stat, _alerta_msg = _alerta_agregado_win(m, ibov_val)
+
+# Radar Institucional: mantém EWZ v9 para whales por z-score
 res_intel, g_flip_usd = processar_inteligencia(_v9_ref_df, _spot_ref) if not _v9_ref_df.empty else (None, 0.0)
 
 if res_intel:
@@ -1602,28 +1613,9 @@ if res_intel:
                             vanna_total=("vanna_total","sum"), volume=("volume","sum"),
                             financial_flow=("financial_flow","sum"))
                        .reset_index())
-    net_gex_ref   = _v9_ref_df["gex_total"].sum()
-    net_dex_ref   = _v9_ref_df["dex_total"].sum()
-    net_vanna_ref = _v9_ref_df["vanna_total"].sum()
-    call_vol_ref  = _v9_ref_df[_v9_ref_df["optionType"]=="Call"]["volume"].sum()
-    put_vol_ref   = _v9_ref_df[_v9_ref_df["optionType"]=="Put"]["volume"].sum()
-    mom_val_ref   = call_vol_ref / put_vol_ref if put_vol_ref > 0 else 1.0
-    cnt_bruto_ref = _v9_ref_df["side"].str.startswith("BRUTO").sum()
-    greeks_inv_ref= (~_v9_ref_df["greeks_ok"]).sum()
-    vol_bull_ref  = net_vanna_ref > 0
-    vol_status_ref= "LONG VOL" if vol_bull_ref else "SHORT VOL"
-    vol_color_ref = "#0f0" if vol_bull_ref else "#f44"
-    tag_vol_cls   = "tag-bull" if vol_bull_ref else "tag-bear"
-    shock_act     = "MM COMPRA" if net_vanna_ref > 0 else "MM VENDE"
-    shock_col     = "#0f0" if net_vanna_ref > 0 else "#f44"
-    top_v_ref     = strikes_agg_ref.sort_values("vanna_total", key=abs, ascending=False).head(3)
-    serie_vanna_ref = strikes_agg_ref["vanna_total"]
-    ic_df_ref = strikes_agg_ref[strikes_agg_ref["optionType"]=="Call"].nlargest(2, "dex_total")
-    ip_df_ref = strikes_agg_ref[strikes_agg_ref["optionType"]=="Put"].nsmallest(2, "dex_total")
     w_calls_ref = res_intel["whales"][res_intel["whales"]["optionType"]=="Call"] if not res_intel["whales"].empty else pd.DataFrame()
     w_puts_ref  = res_intel["whales"][res_intel["whales"]["optionType"]=="Put"]  if not res_intel["whales"].empty else pd.DataFrame()
 
-# Flow Evolution
 df_temporal = _build_temporal_df(frames_bruto)
 
 # ══════════════════════════════════════════════════════════════════
@@ -1635,19 +1627,15 @@ col_left, col_right = st.columns([3, 7])
 # ─── COLUNA ESQUERDA (30%) ────────────────────────────────────────
 with col_left:
 
-    # Alerta de inteligência (do pilar EWZ)
-    if res_intel:
-        st.markdown(alert_box(res_intel["msg"], res_intel["status"]), unsafe_allow_html=True)
+    # ── Correção 3: alerta unificado — fonte: 6 pilares WIN ────────
+    st.markdown(alert_box(_alerta_msg, _alerta_stat), unsafe_allow_html=True)
 
-    # Spot WIN
     st.markdown(
         f"<div style='font-family:JetBrains Mono,monospace;font-size:13px;color:#0ff;"
         f"margin:12px 0 2px;letter-spacing:1px;text-shadow:0 0 5px #0ff;'>"
-        f"⚡ SPOT WIN: <b style='color:#ffb400;font-size:15px;'>{fmt_win(ibov_val)}</b>"
-        f"<span style='color:#8a9bb5;font-size:13px;margin-left:8px;'>(pilares: {pilares_str})</span></div>",
+        f"⚡ SPOT WIN: <b style='color:#ffb400;font-size:15px;'>{fmt_win(ibov_val)}</b></div>",
         unsafe_allow_html=True)
 
-    # KPIs 2x2 — métricas WIN agregadas
     k1, k2 = st.columns(2)
     k1.markdown(kpi("SENTIMENTO",   m["bias"],     m["bias_cls"],   f"Net DEX {fmt_M(m['net_dex'])}"), unsafe_allow_html=True)
     k2.markdown(kpi("C/P MOMENTUM", f"{m['mom_val']:.2f}x", "neutral", f"C:{fmt_M(m['net_vol_c'])}  P:{fmt_M(m['net_vol_p'])}"), unsafe_allow_html=True)
@@ -1655,7 +1643,6 @@ with col_left:
     k3.markdown(kpi("NET GEX (MM)",   fmt_M(m["net_gex"]),   "neutral", "Long+=estabil. Short−=aceler."), unsafe_allow_html=True)
     k4.markdown(kpi("NET DEX (flow)", fmt_M(m["net_dex"]),   m["bias_cls"], "Delta flow agregado"), unsafe_allow_html=True)
 
-    # ── ESTRUTURA GAMA & RISCO ──────────────────────────────────
     section("ESTRUTURA GAMA & RISCO")
 
     def _desc_gwall(pts, ibov):
@@ -1722,7 +1709,6 @@ with col_left:
         f"💡 Passe o mouse nas linhas para ver a interpretação operacional.</div></div>",
         unsafe_allow_html=True)
 
-    # ── CALL / PUT WALLS ───────────────────────────────────────
     if any([m["cw_vol"], m["cw_oi"], m["pw_vol"], m["pw_oi"]]):
         walls_rows = ""
         if m["cw_vol"]: walls_rows += (
@@ -1754,17 +1740,11 @@ with col_left:
             f"<tr><th>WALL</th><th>WIN (pts)</th><th>AÇÃO</th><th>DIST</th></tr>"
             f"{walls_rows}</table></div>", unsafe_allow_html=True)
 
-    # ── ZONAS DE IMPACTO DELTA (em WIN) ────────────────────────
     section("ZONAS DE IMPACTO DELTA")
 
     ic_win = m.get("ic_win", pd.DataFrame())
     ip_win = m.get("ip_win", pd.DataFrame())
 
-    ri = ""
-    for sk_win, row in (ic_win.iterrows() if not ic_win.empty else []):
-        sk_pts = sk_win if isinstance(sk_win, (int, float)) else int(row.name)
-        if not isinstance(sk_win, (int, float)): sk_pts = int(ic_win.index[0])
-        # iterar corretamente
     ri = ""
     if not ic_win.empty:
         for sw in ic_win.index:
@@ -1788,7 +1768,6 @@ with col_left:
                    f"<td class='text-win' style='font-size:13px;'><b>{fmt_win(sw)}</b> P</td>"
                    f"<td style='color:#8a9bb5;font-size:13px;'>{dist_win(sw, ibov_val)}</td></tr>")
 
-    # Delta Flip WIN
     delta_flip_html = ""
     if m["delta_flip"]:
         d = dist_win(m["delta_flip"], ibov_val); lado = "acima" if m["delta_flip"] > ibov_val else "abaixo"
@@ -1811,7 +1790,6 @@ with col_left:
         f"💡 Passe o mouse para ver o motivo da classificação.</div></div>",
         unsafe_allow_html=True)
 
-    # ── VANNA & VOLATILIDADE ────────────────────────────────────
     section("VANNA & VOLATILIDADE")
     vol_status_w = "LONG VOL" if m["net_vanna"] > 0 else "SHORT VOL"
     vol_color_w  = "#0f0" if m["net_vanna"] > 0 else "#f44"
@@ -1831,7 +1809,6 @@ with col_left:
         f"<span style='color:{shock_col_w};font-weight:bold;'>{shock_act_w} {fmt_M(m['net_vanna'])}</span>"
         f"</div></div>", unsafe_allow_html=True)
 
-    # ── TOP VANNA POINTS ────────────────────────────────────────
     section("TOP VANNA POINTS — WIN")
     vanna_s = m["vanna_s"]
     vrows = ""
@@ -1852,7 +1829,6 @@ with col_left:
         f"💡 Passe o mouse nas linhas para ver a interpretação.</div></div>",
         unsafe_allow_html=True)
 
-    # ── DIAGNÓSTICO ESTRATÉGICO ─────────────────────────────────
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     section("DIAGNÓSTICO ESTRATÉGICO")
 
@@ -1863,6 +1839,15 @@ with col_left:
                     f"Net DEX {fmt_M(m['net_dex'])}"), unsafe_allow_html=True)
 
     notas = []
+    # ── Correção 3b: avisa sobre pilares sem dados no snapshot ──
+    _pilares_esperados = set(TICKERS_PILARES)
+    _pilares_carregados = set(pilares_ok)
+    _pilares_faltando = _pilares_esperados - _pilares_carregados
+    if _pilares_faltando:
+        notas.append(("warning",
+            f"⚠ Pilares sem dados no snapshot '{momento}': "
+            f"{', '.join(sorted(_pilares_faltando))} — "
+            f"carregue arquivos com a mesma data para todos os pilares."))
     if m["net_gex"] < 0 and m["net_dex"] < 0:
         notas.append(("danger",  "⚠ PERIGO: MM em Short Gamma com bias baixista → Queda Acelerada"))
     if m["net_gex"] > 0 and m["net_dex"] > 0:
@@ -1874,26 +1859,71 @@ with col_left:
 
 # ─── COLUNA DIREITA (70%) ────────────────────────────────────────
 with col_right:
-    section("TERMINAL WIN — VOLUME · OPEN INTEREST  (6 PILARES AGREGADOS)")
+    section("TERMINAL WIN — VOLUME · OPEN INTEREST")
     fig_vol = build_vol_oi_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_vol, use_container_width=True)
 
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
-    section("TRIPLE PRESSURE MAP WIN  —  DEX · GEX · VANNA  (6 PILARES AGREGADOS)")
+    section("TRIPLE PRESSURE MAP WIN  —  DEX · GEX · VANNA")
     fig_press = build_pressure_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_press, use_container_width=True)
 
     # ══════════════════════════════════════════════════════════════
     # 20-B · MOMENTUM REAL — Vol/OI por Strike WIN (6 Pilares)
     # Lógica idêntica ao momentum_real.py, adaptada para strike_win
+<<<<<<< HEAD
+=======
+    #
+    # CORREÇÕES v4.1:
+    #   Bug 1 — OI estrutural: usa df_win_all (todos os strikes, inclusive
+    #            vol=0) como denominador, não apenas os strikes com vol>0.
+    #            VALE/EWZ perdiam até 64% do OI por esse filtro.
+    #
+    #   Bug 2 — Vol/OI por row: ratio calculada APÓS o groupby
+    #            (vol_sum / oi_sum), nunca como soma de ratios individuais.
+    #            A soma de ratios pode inflar o sinal em +38.000% (SPY).
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
     # ══════════════════════════════════════════════════════════════
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     section("MOMENTUM REAL — VOL/OI  (urgência do fluxo por strike WIN)")
 
+<<<<<<< HEAD
     _df_mom = df_win_plot[df_win_plot["openInterest"] > 10].copy()
 
     if not _df_mom.empty:
         _df_mom["Vol_OI"] = _df_mom["volume"] / _df_mom["openInterest"].replace(0, 1)
+=======
+    # Bug 1 fix: OI estrutural vem de df_win_all (vol >= 0)
+    # Agrupa volume do dia (só strikes com vol>0, já filtrados em df_win_plot)
+    _vol_day = (
+        df_win_plot
+        .groupby(["strike_win", "optionType"])["volume"]
+        .sum()
+        .reset_index()
+        .rename(columns={"volume": "_vol_sum"})
+    )
+
+    # Agrupa OI estrutural de TODOS os strikes (df_win_all inclui vol=0)
+    _oi_struct = (
+        df_win_all
+        .groupby(["strike_win", "optionType"])["openInterest"]
+        .sum()
+        .reset_index()
+        .rename(columns={"openInterest": "_oi_sum"})
+    )
+
+    # Merge: mantém apenas strikes que tiveram volume no dia,
+    # mas usa o OI completo como denominador
+    _df_mom = _vol_day.merge(_oi_struct, on=["strike_win", "optionType"], how="left")
+    _df_mom["_oi_sum"] = _df_mom["_oi_sum"].fillna(0)
+
+    # Filtra strikes sem OI estrutural relevante (denominador mínimo)
+    _df_mom = _df_mom[_df_mom["_oi_sum"] > 10].copy()
+
+    if not _df_mom.empty:
+        # Bug 2 fix: ratio calculada sobre o agregado, nunca por row
+        _df_mom["Vol_OI"] = _df_mom["_vol_sum"] / _df_mom["_oi_sum"].replace(0, 1)
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
 
         _urg_threshold = (
             _df_mom["Vol_OI"][_df_mom["Vol_OI"] > 0].quantile(0.75)
@@ -1918,7 +1948,11 @@ with col_right:
                 else:
                     return "🔴 ALERTA MÁXIMO", "Muita proteção aqui. Preço pode cair rápido e forte."
 
+<<<<<<< HEAD
         _niveis_mom        = []
+=======
+        _niveis_mom         = []
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
         _comportamentos_mom = []
         for _, _row in _df_mom.iterrows():
             _nv, _comp = _classif_urgencia_win(_row["Vol_OI"], _row["optionType"], _urg_threshold)
@@ -1936,6 +1970,7 @@ with col_right:
 
         fig_mom = go.Figure()
         for _tipo, _color, _label in zip(
+<<<<<<< HEAD
             ["Call",       "Put"],
             [COLOR_CALL,   COLOR_PUT],
             ["CALL",       "PUT"],
@@ -1945,6 +1980,20 @@ with col_right:
                 .groupby("strike_win")[["Vol_OI", "nivel", "comportamento"]]
                 .agg({"Vol_OI": "sum", "nivel": "first", "comportamento": "first"})
                 .reset_index()
+=======
+            ["Call",     "Put"],
+            [COLOR_CALL, COLOR_PUT],
+            ["CALL",     "PUT"],
+        ):
+            # Bug 2 fix: cada strike_win/optionType já tem uma linha única
+            # após o merge — Vol_OI já é a ratio do agregado, não soma de ratios
+            _df_v = (
+                _df_mom[_df_mom["optionType"] == _tipo]
+                [["strike_win", "Vol_OI", "nivel", "comportamento",
+                  "_vol_sum", "_oi_sum"]]
+                .copy()
+                .reset_index(drop=True)
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
             )
             if _df_v.empty:
                 continue
@@ -1955,10 +2004,22 @@ with col_right:
                 marker_color=_color,
                 marker_line_width=0,
                 name=_label,
+<<<<<<< HEAD
                 customdata=np.stack([_df_v["nivel"], _df_v["comportamento"]], axis=1),
                 hovertemplate=(
                     "<b>Strike WIN: %{x:,.0f}</b><br>"
                     "Vol/OI: %{y:.2f}x<br>"
+=======
+                customdata=np.stack(
+                    [_df_v["nivel"], _df_v["comportamento"],
+                     _df_v["_vol_sum"], _df_v["_oi_sum"]],
+                    axis=1
+                ),
+                hovertemplate=(
+                    "<b>Strike WIN: %{x:,.0f}</b><br>"
+                    "Vol/OI: %{y:.2f}x<br>"
+                    "Vol dia: %{customdata[2]:,.0f}  |  OI estrutural: %{customdata[3]:,.0f}<br>"
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
                     f"Tipo: {_label}<br>"
                     "──────────────────<br>"
                     "%{customdata[0]}<br>"
@@ -2044,12 +2105,16 @@ with col_right:
             )
     else:
         st.markdown(
+<<<<<<< HEAD
             alert_box("⚠ Dados insuficientes para calcular Vol/OI (OI > 10 em nenhum strike).", "warning"),
+=======
+            alert_box("⚠ Dados insuficientes para calcular Vol/OI (OI estrutural > 10 em nenhum strike).", "warning"),
+>>>>>>> b04ecfa7ce3cfe251b4276b48d8e23c494e1514e
             unsafe_allow_html=True,
         )
 
 # ══════════════════════════════════════════════════════════════════
-# 21 · RADAR INSTITUCIONAL (abaixo do layout 30/70)
+# 21 · RADAR INSTITUCIONAL
 # ══════════════════════════════════════════════════════════════════
 
 if res_intel and not res_intel["whales"].empty:
@@ -2116,7 +2181,7 @@ if res_intel and not res_intel["whales"].empty:
         else: st.caption("Sem anomalias em puts.")
 
 # ══════════════════════════════════════════════════════════════════
-# 22 · FLOW EVOLUTION — pipeline bruta USD, sem peso, sem WIN
+# 22 · FLOW EVOLUTION
 # ══════════════════════════════════════════════════════════════════
 
 st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
