@@ -1081,7 +1081,7 @@ with st.sidebar:
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     min_fin       = 0
     multiplicador = 100
-    focus_pct     = 0.03
+    focus_pct     = 0.02
 
 # ══════════════════════════════════════════════════════════════════
 # 17 · HEADER
