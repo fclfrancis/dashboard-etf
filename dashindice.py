@@ -36,6 +36,19 @@ if _elapsed > 60:
     st.session_state["last_refresh"] = _time.time()
     st.rerun()
 
+# ══════════════════════════════════════════════════════════════════
+# HELPER GLOBAL — Autenticação GitHub via Secrets
+# ══════════════════════════════════════════════════════════════════
+def _gh_headers():
+    headers = {}
+    try:
+        token = st.secrets["GITHUB_TOKEN"]
+        if token:
+            headers["Authorization"] = f"token {token}"
+    except Exception:
+        pass
+    return headers
+
 HUD_CSS = """
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -173,14 +186,14 @@ st.markdown(HUD_CSS, unsafe_allow_html=True)
 # LOGIN · CONTROLE DE ACESSO POR EMAIL
 # ══════════════════════════════════════════════════════════════════
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=300)
 def carregar_emails_autorizados():
     GITHUB_USER   = "fclfrancis"
     GITHUB_REPO   = "dashboard-etf"
     GITHUB_BRANCH = "main"
     url = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{GITHUB_BRANCH}/config.yaml"
     try:
-        r = requests.get(url, timeout=10)
+        r = requests.get(url, headers=_gh_headers(), timeout=10)
         if r.status_code == 200:
             emails = []
             for linha in r.text.splitlines():
@@ -577,9 +590,6 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
-    # O volume real do dia (inclusive vencimento no dia) é preservado.
-
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -612,11 +622,9 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
         direction  = (1 if last >= mid_price else -1) if last_ok else (0 if bid_ask_ok else 0)
         greeks_ok  = not (dlt == 0 and gma == 0 and vega == 0 and sk != sp)
 
-        # OI estrutural — incluído independente de vol (fix Bug 1)
         gex_oi   = gma * oi  * _MULT * SG * opt_sign * peso if greeks_ok else 0.0
         dex_oi   = dlt * oi  * _MULT * SD * opt_sign  * peso
 
-        # Fluxo do dia — requer vol > 0
         gex_vol  = gma * vol * _MULT * SG * opt_sign * direction * peso if greeks_ok and direction != 0 and vol > 0 else 0.0
         dex_vol  = dlt * vol * _MULT * SD * direction * peso if vol > 0 else 0.0
         vanna_vol= ((dlt * vega / sp) * vol * _MULT * direction * opt_sign * peso
@@ -626,7 +634,7 @@ def _carregar_pilar_win(tk: str, arqs: list, ibov: float, peso: float) -> pd.Dat
         rows.append({
             "strike_win": sk_win, "optionType": opt,
             "volume": vol * peso,
-            "openInterest": oi * peso,       # OI estrutural preservado para todos strikes
+            "openInterest": oi * peso,
             "financial_flow": fin_flow, "gex_total": gex_vol, "gex_oi": gex_oi,
             "dex_total": dex_vol, "dex_oi": dex_oi, "vanna_total": vanna_vol,
         })
@@ -639,8 +647,6 @@ def _calcular_pilar_normalizado(tk: str, arqs: list, ibov: float, peso: float) -
     if not frs: return pd.DataFrame()
     df_p = pd.concat(frs, ignore_index=True)
 
-    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
-    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM", "EWZ", "VALE", "PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -723,8 +729,6 @@ def _carregar_pilar_bruto(tk: str, arqs: list, mult: float = 100.0) -> pd.DataFr
 
     df_p = pd.concat(frs, ignore_index=True)
 
-    # Opção A: filtro DTE>=2 removido — inclui 0DTE/weekly
-    # O volume real do dia (inclusive vencimento no dia) é preservado.
     if tk in ("EEM","EWZ","VALE","PBR"):
         try:
             bid_n = pd.to_numeric(df_p["bidPrice"], errors="coerce").fillna(0)
@@ -1012,7 +1016,6 @@ def _flow_fig(df_t, col_cum, title, color_pos, color_neg, extras=None):
 # ══════════════════════════════════════════════════════════════════
 
 with st.sidebar:
-    # ── Configurações GitHub (ocultas — sem exibição na sidebar) ──
     GITHUB_USER   = "fclfrancis"
     GITHUB_REPO   = "dashboard-etf"
     GITHUB_BRANCH = "main"
@@ -1020,21 +1023,23 @@ with st.sidebar:
     _API_URL  = f"https://api.github.com/repos/{GITHUB_USER}/{GITHUB_REPO}/contents/{GITHUB_PASTA}?ref={GITHUB_BRANCH}"
     _RAW_BASE = f"https://raw.githubusercontent.com/{GITHUB_USER}/{GITHUB_REPO}/{GITHUB_BRANCH}/{GITHUB_PASTA}"
 
-    @st.cache_data(ttl=60)
+    @st.cache_data(ttl=300)
     def listar_arquivos_github_win():
         try:
-            r = requests.get(_API_URL, timeout=10)
+            r = requests.get(_API_URL, headers=_gh_headers(), timeout=10)
             if r.status_code == 200:
                 return [f["name"] for f in r.json() if f["name"].endswith(".json")]
-        except:
-            pass
+            else:
+                st.error(f"GitHub API {r.status_code}: {r.text[:200]}")
+        except Exception as e:
+            st.error(f"Erro listar: {e}")
         return []
 
-    @st.cache_data(ttl=60)
+    @st.cache_data(ttl=300)
     def baixar_json_github_win(nome_arquivo):
         url = f"{_RAW_BASE}/{nome_arquivo}"
         try:
-            r = requests.get(url, timeout=10)
+            r = requests.get(url, headers=_gh_headers(), timeout=10)
             if r.status_code == 200:
                 return r.json()
         except:
@@ -1048,21 +1053,17 @@ with st.sidebar:
     if nomes_disponiveis:
         tickers_encontrados = agrupar_por_ticker(nomes_disponiveis)
 
-    # Snapshot: seletor oculto via CSS — funcional mas invisível
     snapshots = {}
     if nomes_disponiveis: snapshots = agrupar_snapshots(nomes_disponiveis)
 
-    # CSS para ocultar tudo acima de PARÂMETROS WIN na sidebar
     st.markdown("""
     <style>
-    /* Oculta o seletor de snapshot mas mantém funcional via key */
     div[data-testid='stSidebar'] div[data-testid='stSelectbox'] { display: none !important; }
     </style>""", unsafe_allow_html=True)
 
     if snapshots: momento = st.selectbox("Snapshot:", list(snapshots.keys()), key="snapshot_hidden", label_visibility="collapsed")
     else: momento = None
 
-    # ── Único elemento visível: PARÂMETROS WIN ────────────────────
     st.markdown("<div style='color:#ffb400;font-size:14px;font-weight:700;letter-spacing:2px;"
                 "padding:16px 0 8px;text-shadow:0 0 4px #ffb400;'>🎯 PARÂMETROS WIN</div>", unsafe_allow_html=True)
 
@@ -1128,14 +1129,9 @@ _spot_ref    = 0.0
 _v9_ref_df   = pd.DataFrame()
 
 def _get_arqs_github(tk):
-    # ── Correção 1: filtra por data do pregão mais recente ──────
-    # Cada arquivo tem a data no nome (ex: ETF_EWZ_2026-05-29_...).
-    # Só carrega arquivos cuja data bate com o snapshot selecionado
-    # (variável `momento`), evitando misturar pregões diferentes.
     nomes_tk = tickers_encontrados.get(tk, [])
     nomes = [n for n in nomes_tk if momento and momento in n]
     if not nomes:
-        # fallback: usa qualquer arquivo disponível do ticker
         nomes = nomes_tk
     arqs = []
     for nome in nomes:
@@ -1195,26 +1191,12 @@ if not m:
     st.markdown(alert_box("⚠ Não foi possível calcular métricas.", "warning"), unsafe_allow_html=True)
     st.stop()
 
-# ── Correção 2: alerta de convicção derivado dos 6 pilares WIN ──
-# Usa net_gex e net_dex de _calcular_metricas_win (já calculado em m)
-# em vez de processar_inteligencia(EWZ). Mantém _v9_ref_df só para
-# o Radar Institucional (whales por z-score em espaço USD do EWZ).
-
 def _alerta_agregado_win(m: dict, ibov: int) -> tuple:
-    """
-    Deriva o alerta de convicção a partir das métricas WIN agregadas.
-    Lógica espelhada de processar_inteligencia, mas usando:
-      - net_gex  (GEX dos 6 pilares, espaço WIN)  como indicador de regime
-      - net_dex  (DEX dos 6 pilares, espaço WIN)  como indicador direcional
-      - gamma_flip WIN                             como divisor de regime
-    Retorna (status, mensagem) para exibição no alerta principal.
-    """
     net_gex    = m["net_gex"]
     net_dex    = m["net_dex"]
     gamma_flip = m["gamma_flip"]
     gamma_wall = m["gamma_wall"]
 
-    # Regime: Long Gamma (spot acima do flip) vs Short Gamma (abaixo)
     spot_acima_flip = ibov > gamma_flip
 
     if spot_acima_flip and net_dex > 0 and net_gex > 0:
@@ -1234,7 +1216,6 @@ def _alerta_agregado_win(m: dict, ibov: int) -> tuple:
 
 _alerta_stat, _alerta_msg = _alerta_agregado_win(m, ibov_val)
 
-# Radar Institucional: mantém EWZ v9 para whales por z-score
 res_intel, g_flip_usd = processar_inteligencia(_v9_ref_df, _spot_ref) if not _v9_ref_df.empty else (None, 0.0)
 
 if res_intel:
@@ -1254,10 +1235,8 @@ df_temporal = _build_temporal_df(frames_bruto)
 
 col_left, col_right = st.columns([3, 7])
 
-# ─── COLUNA ESQUERDA (30%) ────────────────────────────────────────
 with col_left:
 
-    # ── Correção 3: alerta unificado — fonte: 6 pilares WIN ────────
     st.markdown(alert_box(_alerta_msg, _alerta_stat), unsafe_allow_html=True)
 
     st.markdown(
@@ -1469,7 +1448,6 @@ with col_left:
                     f"Net DEX {fmt_M(m['net_dex'])}"), unsafe_allow_html=True)
 
     notas = []
-    # ── Correção 3b: avisa sobre pilares sem dados no snapshot ──
     _pilares_esperados = set(TICKERS_PILARES)
     _pilares_carregados = set(pilares_ok)
     _pilares_faltando = _pilares_esperados - _pilares_carregados
@@ -1487,7 +1465,6 @@ with col_left:
     for kind, msg_nota in notas:
         st.markdown(alert_box(msg_nota, kind), unsafe_allow_html=True)
 
-# ─── COLUNA DIREITA (70%) ────────────────────────────────────────
 with col_right:
     section("TERMINAL WIN — VOLUME · OPEN INTEREST")
     fig_vol = build_vol_oi_chart_win(df_win_plot, ibov_val, focus_pct)
@@ -1498,24 +1475,9 @@ with col_right:
     fig_press = build_pressure_chart_win(df_win_plot, ibov_val, focus_pct)
     st.plotly_chart(fig_press, use_container_width=True)
 
-    # ══════════════════════════════════════════════════════════════
-    # 20-B · MOMENTUM REAL — Vol/OI por Strike WIN (6 Pilares)
-    # Lógica idêntica ao momentum_real.py, adaptada para strike_win
-    #
-    # CORREÇÕES v4.1:
-    #   Bug 1 — OI estrutural: usa df_win_all (todos os strikes, inclusive
-    #            vol=0) como denominador, não apenas os strikes com vol>0.
-    #            VALE/EWZ perdiam até 64% do OI por esse filtro.
-    #
-    #   Bug 2 — Vol/OI por row: ratio calculada APÓS o groupby
-    #            (vol_sum / oi_sum), nunca como soma de ratios individuais.
-    #            A soma de ratios pode inflar o sinal em +38.000% (SPY).
-    # ══════════════════════════════════════════════════════════════
     st.markdown("<div class='glow-divider'></div>", unsafe_allow_html=True)
     section("MOMENTUM REAL — VOL/OI  (urgência do fluxo por strike WIN)")
 
-    # Bug 1 fix: OI estrutural vem de df_win_all (vol >= 0)
-    # Agrupa volume do dia (só strikes com vol>0, já filtrados em df_win_plot)
     _vol_day = (
         df_win_plot
         .groupby(["strike_win", "optionType"])["volume"]
@@ -1524,7 +1486,6 @@ with col_right:
         .rename(columns={"volume": "_vol_sum"})
     )
 
-    # Agrupa OI estrutural de TODOS os strikes (df_win_all inclui vol=0)
     _oi_struct = (
         df_win_all
         .groupby(["strike_win", "optionType"])["openInterest"]
@@ -1533,16 +1494,12 @@ with col_right:
         .rename(columns={"openInterest": "_oi_sum"})
     )
 
-    # Merge: mantém apenas strikes que tiveram volume no dia,
-    # mas usa o OI completo como denominador
     _df_mom = _vol_day.merge(_oi_struct, on=["strike_win", "optionType"], how="left")
     _df_mom["_oi_sum"] = _df_mom["_oi_sum"].fillna(0)
 
-    # Filtra strikes sem OI estrutural relevante (denominador mínimo)
     _df_mom = _df_mom[_df_mom["_oi_sum"] > 10].copy()
 
     if not _df_mom.empty:
-        # Bug 2 fix: ratio calculada sobre o agregado, nunca por row
         _df_mom["Vol_OI"] = _df_mom["_vol_sum"] / _df_mom["_oi_sum"].replace(0, 1)
 
         _urg_threshold = (
@@ -1577,7 +1534,6 @@ with col_right:
         _df_mom["nivel"]         = _niveis_mom
         _df_mom["comportamento"] = _comportamentos_mom
 
-        # Ticks WIN — range idêntico ao dos outros gráficos (focus_pct)
         _s_lo_m = int(ibov_val * (1 - focus_pct))
         _s_hi_m = int(ibov_val * (1 + focus_pct))
         _strikes_mom = sorted(_df_mom["strike_win"].unique())
@@ -1590,8 +1546,6 @@ with col_right:
             [COLOR_CALL, COLOR_PUT],
             ["CALL",     "PUT"],
         ):
-            # Bug 2 fix: cada strike_win/optionType já tem uma linha única
-            # após o merge — Vol_OI já é a ratio do agregado, não soma de ratios
             _df_v = (
                 _df_mom[_df_mom["optionType"] == _tipo]
                 [["strike_win", "Vol_OI", "nivel", "comportamento",
@@ -1625,7 +1579,6 @@ with col_right:
                 ),
             ))
 
-        # Linha de urgência (p75)
         fig_mom.add_hline(
             y=_urg_threshold,
             line_dash="dash", line_color="#ffa500", line_width=1.5, opacity=0.9,
@@ -1633,7 +1586,6 @@ with col_right:
             annotation_position="top right",
             annotation_font=dict(color="#ffa500", size=11, family="JetBrains Mono"),
         )
-        # Linha neutra 1.0×
         fig_mom.add_hline(
             y=1.0,
             line_dash="dot", line_color="#ffffff", line_width=1, opacity=0.35,
@@ -1641,7 +1593,6 @@ with col_right:
             annotation_position="bottom right",
             annotation_font=dict(color="#888", size=10, family="JetBrains Mono"),
         )
-        # Linha do spot WIN
         fig_mom.add_vline(
             x=ibov_val,
             line_dash="dot", line_color=COLOR_NEON, line_width=1.5,
@@ -1686,7 +1637,6 @@ with col_right:
         )
         st.plotly_chart(fig_mom, use_container_width=True)
 
-        # Resumo textual de urgência máxima detectada
         _mom_max = _df_mom.sort_values("Vol_OI", ascending=False).head(1)
         if not _mom_max.empty:
             _mx = _mom_max.iloc[0]
